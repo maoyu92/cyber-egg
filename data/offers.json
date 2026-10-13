@@ -1,50 +1,779 @@
 [
-{"id":"unisound-u2-flash","name":"云知声 U2 Flash","provider":"云知声 MaaS","category":"api","models":["u2-flash"],"free_type":"限时","start":"2026-09-30","end":"2026-10-31","quota":"活动期输入/缓存/输出均 0 元；RPM 20、TPM 500 万","summary":"266B Agent/Coding 模型，1M 上下文，可驱动 Hermes / OpenClaw / pi","tags":["Coding","Agent","1M上下文","OpenAI兼容","Anthropic兼容"],
- "how_to_get":["打开 maas.unisound.com 注册并登录","控制台创建 API Key","模型 ID 填 u2-flash，按 OpenAI 或 Anthropic 协议调用","实名认证另有 U2 Flash 500 万 tokens 礼包"],
- "urls":{"official":"https://maas.unisound.com/models/u2-flash","docs":"https://maas.unisound.com/docs/api/text/openai-compatible","signup":"https://maas.unisound.com/docs/guide/quickstart"},
- "base_url":"见模型广场页（OpenAI / Anthropic 两种 base URL）","compat":"OpenAI / Anthropic",
- "limits":"上下文 1M，最大输出 128K；RPM 20，TPM 5,000,000","usage_notes":"活动结束后原价：输入 1 / 缓存 0.2 / 输出 2 元每百万 tokens。官方有 Hermes、OpenClaw、pi 接入文档。",
- "sources":["https://maas.unisound.com/models/u2-flash","https://maas.unisound.com/model-hub/u2-flash","https://maas.unisound.com/docs/price/overview"],"verified_at":"2026-10-13","status":"active"},
-{"id":"unisound-u2-decision","name":"云知声 U2 Decision","provider":"云知声 MaaS","category":"api","models":["u2-decision"],"free_type":"限时","start":null,"end":null,"quota":"限时免费（官方未写截止日期）；RPM 100、TPM 1000 万","summary":"4B 开源决策模型：模型路由 / 安全决策 / 工作流路由，输出结构化判定","tags":["决策","路由","开源","4B"],
- "how_to_get":["在云知声 MaaS 注册并创建 API Key","模型 ID 填 u2-decision","调用 SystemOne 协议接口（Jev-compatible）"],
- "urls":{"official":"https://maas.unisound.com/models/u2-decision","docs":"https://maas.unisound.com/model-hub/u2-decision","signup":"https://maas.unisound.com/docs/guide/quickstart","github":"https://github.com/Unisound-LLM/u2_decision_4b"},
- "base_url":"https://maas-api.unisound.com/v1/systemone","compat":"SystemOne（Jev-compatible）",
- "limits":"上下文 128K，最大输出 8K；RPM 100，TPM 10,000,000","usage_notes":"不生成自然语言，返回 choice / probabilities / confidence。截止日期待官方公布。",
- "sources":["https://maas.unisound.com/models/u2-decision","https://maas.unisound.com/model-hub/u2-decision"],"verified_at":"2026-10-13","status":"active"},
-{"id":"opencode-zen-free","name":"OpenCode Zen 免费模型","provider":"OpenCode (anoma.ly)","category":"api","models":["step-5-preview-free","longcat-2.5-preview-free","mimo-v2.6-flash-free","mimo-v2.5-free","ling-3.1-flash-free","ling-3.0-flash-fin-free","nemotron-3-ultra-free","nemotron-3.5-lightning-free","exo-free","space-bunny-free","cat-jam-free","big-pickle","muse-spark-1.3-contributor-free","jev-1.13-free"],"free_type":"限时","start":null,"end":null,"quota":"带 -free 后缀的模型输入/输出均 Free；官方只写“限时”，无截止日期","summary":"十多个限时免费模型，OpenCode 里直接选，也可 API 调用","tags":["Coding","OpenAI兼容","多模型"],
- "how_to_get":["安装 OpenCode（opencode.ai）","在 Console 登录并获取 API Key","TUI 中 /connect 选 OpenCode，再 /models 选 *-free 模型","或直接调用 chat/completions 端点"],
- "urls":{"official":"https://opencode.ai","docs":"https://opencode.ai/docs/zen/","signup":"https://opencode.ai/auth"},
- "base_url":"https://opencode.ai/inference/v1","compat":"OpenAI 兼容（chat/completions）；Jev 为 /systemone",
- "limits":"官方未公布免费模型的次数/速率上限（待核实）","usage_notes":"隐私：Big Pickle、Cat Jam、Exo、MiMo、Ling 等免费期数据可能用于改进模型；Nemotron 免费端点会记录日志；Muse Spark Contributor 以数据换训练。Step 5 Preview / LongCat / Space Bunny 为零留存。OpenCode Go 订阅里也有 step-5-preview-free、longcat-2.5-preview-free。",
- "sources":["https://opencode.ai/docs/zen/","本机 opencode models 列表 2026-10-13"],"verified_at":"2026-10-13","status":"active"},
-{"id":"openrouter-free","name":"OpenRouter :free 模型","provider":"OpenRouter","category":"api","models":["nvidia/nemotron-3-ultra-550b-a55b:free","nvidia/nemotron-3-super-120b-a12b:free","google/gemma-4-31b-it:free","thinkingmachines/inkling:free","poolside/laguna-s-2.1:free","cohere/north-mini-code:free"],"free_type":"每日额度","start":null,"end":null,"quota":"20 次/分钟；累计充值 <10 credits 每天 50 次，≥10 credits 每天 1000 次","summary":"模型 ID 以 :free 结尾即免费，2026-10-13 共 15 个","tags":["OpenAI兼容","多模型","每日额度"],
- "how_to_get":["注册 openrouter.ai 并创建 API Key","模型 ID 选以 :free 结尾的","可选：充值 10 credits 把每日上限提到 1000 次","GET /api/v1/key 可查 free_model_daily_requests 剩余次数"],
- "urls":{"official":"https://openrouter.ai/models?max_price=0","docs":"https://openrouter.ai/docs/api/reference/limits","signup":"https://openrouter.ai/settings/keys"},
- "base_url":"https://openrouter.ai/api/v1","compat":"OpenAI 兼容",
- "limits":"免费模型 20 RPM；每日 50 / 1000 次（UTC 0 点重置）；账户余额为负时免费模型也会 402","usage_notes":"2026-10-13 的 15 个免费模型：apodex-1.1-mini、dots-3-note-preview、lfm-2.5-2.6b、nemotron-3.5-lightning、inkling-small、laguna-s-2.1、inkling、laguna-xs-2.1、north-mini-code、nemotron-3.5-content-safety、nemotron-3-ultra-550b、nemotron-3-nano-omni-30b、gemma-4-26b-a4b、gemma-4-31b、nemotron-3-super-120b。列表经常变。",
- "sources":["https://openrouter.ai/api/v1/models","https://openrouter.ai/docs/api/reference/limits"],"verified_at":"2026-10-13","status":"active"},
-{"id":"zhipu-glm-flash","name":"智谱 GLM-4.7-Flash / GLM-4.6V-Flash","provider":"智谱 BigModel","category":"api","models":["glm-4.7-flash","glm-4.6v-flash"],"free_type":"永久额度","start":"2026-01-19","end":null,"quota":"官方标注免费调用（具体并发/速率上限待核实）","summary":"30B-A3B 开源混合思考模型 + 9B 多模态免费版","tags":["中文","Coding","多模态","开源"],
- "how_to_get":["在 bigmodel.cn 注册并实名","创建 API Key","模型编码 glm-4.7-flash 或 glm-4.6v-flash"],
- "urls":{"official":"https://www.zhipuai.cn/zh/news/148","docs":"https://docs.bigmodel.cn/cn/guide/models/free/glm-4.7-flash","signup":"https://bigmodel.cn"},
- "base_url":"https://open.bigmodel.cn/api/paas/v4","compat":"OpenAI 风格 chat/completions",
- "limits":"待核实","usage_notes":"GLM-4.5-Flash 已于 2026-01-30 下线并自动路由到 4.7-Flash。注意 GLM-5.3-Flash 是付费模型，不在免费之列。",
- "sources":["https://www.zhipuai.cn/zh/news/148","https://docs.bigmodel.cn/cn/guide/models/free/glm-4.7-flash","https://docs.bigmodel.cn/cn/guide/models/free/glm-4.6v-flash"],"verified_at":"2026-10-13","status":"active"},
-{"id":"cloudflare-workers-ai","name":"Cloudflare Workers AI 免费额度","provider":"Cloudflare","category":"api","models":["@cf/meta/llama-3.3-70b-instruct-fp8-fast","@cf/openai/gpt-oss-120b","@cf/zai-org/glm-4.7-flash","@cf/google/gemma-4-26b-a4b-it","…"],"free_type":"每日额度","start":null,"end":null,"quota":"每天 10,000 Neurons 免费（UTC 0 点重置）","summary":"Free 计划即可用，含 LLM、嵌入、绘图、语音模型","tags":["每日额度","多模态","Workers"],
- "how_to_get":["注册 Cloudflare 账号","控制台 AI → Workers AI 获取 Account ID 与 API Token","REST 调用或在 Worker 中用 AI binding"],
- "urls":{"official":"https://developers.cloudflare.com/workers-ai/","docs":"https://developers.cloudflare.com/workers-ai/platform/pricing/","signup":"https://dash.cloudflare.com/sign-up"},
- "base_url":"https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1","compat":"OpenAI 兼容端点（另有原生 /ai/run）",
- "limits":"10,000 Neurons/天；部分模型（kimi-k2.6/k2.7-code、glm-5.2/5.3/5.3-flash、deepseek-v4 系列）需付费计划","usage_notes":"超额需 Workers Paid，$0.011/1000 Neurons。",
- "sources":["https://developers.cloudflare.com/workers-ai/platform/pricing/"],"verified_at":"2026-10-13","status":"active"},
-{"id":"workbuddy-step5","name":"WorkBuddy × Step 5 Preview","provider":"腾讯 WorkBuddy / 阶跃星辰","category":"app","models":["Step-5-Preview"],"free_type":"限时","start":"2026-10-12","end":"2026-10-25","quota":"限免期积分倍率 0.43× → 0，不扣积分（官方页面原文待核实）","summary":"国内版、国际版客户端都能选，上下文默认 300K，可调到 1M","tags":["办公Agent","客户端","1M上下文"],
- "how_to_get":["下载 WorkBuddy 客户端（国内版或国际版）并登录","模型列表选 Step-5-Preview","按需调整思考强度和上下文窗口"],
- "urls":{"official":"https://www.workbuddy.cn/","docs":"https://www.workbuddy.cn/docs/workbuddy/FirstTask","signup":"https://www.workbuddy.cn/"},
- "base_url":null,"compat":null,
- "limits":"待核实（高峰期可能有并发/排队限制）","usage_notes":"仅限 WorkBuddy 内使用，不是 API 额度。截止日 10-25 出自新浪科技报道与多家转载，未找到腾讯官方活动页。",
- "sources":["https://finance.sina.com.cn/jjxw/2026-10-13/doc-inivasei8834603.shtml","https://www.uied.cn/posts/922036"],"verified_at":"2026-10-13","status":"active"},
-{"id":"qoder-qwen38-flash","name":"Qoder × Qwen3.8-Flash","provider":"阿里 Qoder（原通义灵码）","category":"app","models":["Qwen3.8-Flash"],"free_type":"限时","start":"2026-09-18","end":null,"quota":"计费系数 0.1× → 0.0×，不消耗 Credits；无需领取，Credits 为 0 也能用","summary":"Qoder CN 与国际版个人用户免费用，已延期，结束时间待官方公告","tags":["Coding","IDE","CLI","多模态"],
- "how_to_get":["下载 Qoder（CN: qoder.cn / 国际: qoder.com）并登录个人账号","模型选择器选 Qwen3.8-Flash","直接使用，不扣 Credits"],
- "urls":{"official":"https://docs.qoder.cn/events/flashoffer","docs":"https://docs.qoder.com/zh/events/flashoffer","signup":"https://qoder.cn"},
- "base_url":null,"compat":null,
- "limits":"企业订阅（团队版/企业版）不适用；仅限 Qoder 产品内","usage_notes":"原定 9-30 结束，已延长，10-1 起继续免费，结束时间将提前在活动页公告。",
- "sources":["https://docs.qoder.cn/events/flashoffer","https://docs.qoder.com/zh/events/flashoffer"],"verified_at":"2026-10-13","status":"active"}
+ {
+  "id": "unisound-u2-flash",
+  "name": "云知声 U2 Flash",
+  "provider": "云知声 MaaS",
+  "category": "api",
+  "models": [
+   "u2-flash"
+  ],
+  "free_type": "限时",
+  "start": "2026-09-30",
+  "end": "2026-10-31",
+  "quota": "活动期输入/缓存/输出均 0 元；RPM 20、TPM 500 万",
+  "summary": "266B Agent/Coding 模型，1M 上下文，可驱动 Hermes / OpenClaw / pi",
+  "tags": [
+   "Coding",
+   "Agent",
+   "1M上下文",
+   "OpenAI兼容",
+   "Anthropic兼容"
+  ],
+  "how_to_get": [
+   "打开 maas.unisound.com 注册并登录",
+   "控制台创建 API Key",
+   "模型 ID 填 u2-flash，按 OpenAI 或 Anthropic 协议调用",
+   "实名认证另有 U2 Flash 500 万 tokens 礼包"
+  ],
+  "urls": {
+   "official": "https://maas.unisound.com/models/u2-flash",
+   "docs": "https://maas.unisound.com/docs/api/text/openai-compatible",
+   "signup": "https://maas.unisound.com/docs/guide/quickstart"
+  },
+  "base_url": "见模型广场页（OpenAI / Anthropic 两种 base URL）",
+  "compat": "OpenAI / Anthropic",
+  "limits": "上下文 1M，最大输出 128K；RPM 20，TPM 5,000,000",
+  "usage_notes": "活动结束后原价：输入 1 / 缓存 0.2 / 输出 2 元每百万 tokens。官方有 Hermes、OpenClaw、pi 接入文档。",
+  "sources": [
+   "https://maas.unisound.com/models/u2-flash",
+   "https://maas.unisound.com/model-hub/u2-flash",
+   "https://maas.unisound.com/docs/price/overview",
+   "https://www.unisound.com/research/158"
+  ],
+  "verified_at": "2026-10-13",
+  "status": "active",
+  "model_released": "2026-09-15",
+  "model_released_note": "云知声官方发布"
+ },
+ {
+  "id": "unisound-u2-decision",
+  "name": "云知声 U2 Decision",
+  "provider": "云知声 MaaS",
+  "category": "api",
+  "models": [
+   "u2-decision"
+  ],
+  "free_type": "限时",
+  "start": null,
+  "end": null,
+  "quota": "限时免费（官方未写截止日期）；RPM 100、TPM 1000 万",
+  "summary": "4B 开源决策模型：模型路由 / 安全决策 / 工作流路由，输出结构化判定",
+  "tags": [
+   "决策",
+   "路由",
+   "开源",
+   "4B"
+  ],
+  "how_to_get": [
+   "在云知声 MaaS 注册并创建 API Key",
+   "模型 ID 填 u2-decision",
+   "调用 SystemOne 协议接口（Jev-compatible）"
+  ],
+  "urls": {
+   "official": "https://maas.unisound.com/models/u2-decision",
+   "docs": "https://maas.unisound.com/model-hub/u2-decision",
+   "signup": "https://maas.unisound.com/docs/guide/quickstart",
+   "github": "https://github.com/Unisound-LLM/u2_decision_4b"
+  },
+  "base_url": "https://maas-api.unisound.com/v1/systemone",
+  "compat": "SystemOne（Jev-compatible）",
+  "limits": "上下文 128K，最大输出 8K；RPM 100，TPM 10,000,000",
+  "usage_notes": "不生成自然语言，返回 choice / probabilities / confidence。截止日期待官方公布。",
+  "sources": [
+   "https://maas.unisound.com/models/u2-decision",
+   "https://maas.unisound.com/model-hub/u2-decision",
+   "https://www.unisound.com/research/159"
+  ],
+  "verified_at": "2026-10-13",
+  "status": "active",
+  "model_released": "2026-09-26",
+  "model_released_note": "云知声官方新闻"
+ },
+ {
+  "id": "opencode-zen-free",
+  "name": "OpenCode Zen 免费模型",
+  "provider": "OpenCode (anoma.ly)",
+  "category": "api",
+  "models": [
+   "step-5-preview-free",
+   "longcat-2.5-preview-free",
+   "mimo-v2.6-flash-free",
+   "mimo-v2.5-free",
+   "ling-3.1-flash-free",
+   "ling-3.0-flash-fin-free",
+   "nemotron-3-ultra-free",
+   "nemotron-3.5-lightning-free",
+   "exo-free",
+   "space-bunny-free",
+   "cat-jam-free",
+   "big-pickle",
+   "muse-spark-1.3-contributor-free",
+   "jev-1.13-free"
+  ],
+  "free_type": "限时",
+  "start": null,
+  "end": null,
+  "quota": "带 -free 后缀的模型输入/输出均 Free；官方只写“限时”，无截止日期",
+  "summary": "十多个限时免费模型，OpenCode 里直接选，也可 API 调用",
+  "tags": [
+   "Coding",
+   "OpenAI兼容",
+   "多模型"
+  ],
+  "how_to_get": [
+   "安装 OpenCode（opencode.ai）",
+   "在 Console 登录并获取 API Key",
+   "TUI 中 /connect 选 OpenCode，再 /models 选 *-free 模型",
+   "或直接调用 chat/completions 端点"
+  ],
+  "urls": {
+   "official": "https://opencode.ai",
+   "docs": "https://opencode.ai/docs/zen/",
+   "signup": "https://opencode.ai/auth"
+  },
+  "base_url": "https://opencode.ai/inference/v1",
+  "compat": "OpenAI 兼容（chat/completions）；Jev 为 /systemone",
+  "limits": "官方未公布免费模型的次数/速率上限（待核实）",
+  "usage_notes": "隐私：Big Pickle、Cat Jam、Exo、MiMo、Ling 等免费期数据可能用于改进模型；Nemotron 免费端点会记录日志；Muse Spark Contributor 以数据换训练。Step 5 Preview / LongCat / Space Bunny 为零留存。OpenCode Go 订阅里也有 step-5-preview-free、longcat-2.5-preview-free。",
+  "sources": [
+   "https://opencode.ai/docs/zen/",
+   "本机 opencode models 列表 2026-10-13"
+  ],
+  "verified_at": "2026-10-13",
+  "status": "active",
+  "model_released": null,
+  "model_released_note": "多个模型，各自发布时间不同"
+ },
+ {
+  "id": "openrouter-free",
+  "name": "OpenRouter :free 模型",
+  "provider": "OpenRouter",
+  "category": "api",
+  "models": [
+   "nvidia/nemotron-3-ultra-550b-a55b:free",
+   "nvidia/nemotron-3-super-120b-a12b:free",
+   "google/gemma-4-31b-it:free",
+   "thinkingmachines/inkling:free",
+   "poolside/laguna-s-2.1:free",
+   "cohere/north-mini-code:free"
+  ],
+  "free_type": "每日额度",
+  "start": null,
+  "end": null,
+  "quota": "20 次/分钟；累计充值 <10 credits 每天 50 次，≥10 credits 每天 1000 次",
+  "summary": "模型 ID 以 :free 结尾即免费，2026-10-13 共 15 个",
+  "tags": [
+   "OpenAI兼容",
+   "多模型",
+   "每日额度"
+  ],
+  "how_to_get": [
+   "注册 openrouter.ai 并创建 API Key",
+   "模型 ID 选以 :free 结尾的",
+   "可选：充值 10 credits 把每日上限提到 1000 次",
+   "GET /api/v1/key 可查 free_model_daily_requests 剩余次数"
+  ],
+  "urls": {
+   "official": "https://openrouter.ai/models?max_price=0",
+   "docs": "https://openrouter.ai/docs/api/reference/limits",
+   "signup": "https://openrouter.ai/settings/keys"
+  },
+  "base_url": "https://openrouter.ai/api/v1",
+  "compat": "OpenAI 兼容",
+  "limits": "免费模型 20 RPM；每日 50 / 1000 次（UTC 0 点重置）；账户余额为负时免费模型也会 402",
+  "usage_notes": "2026-10-13 的 15 个免费模型：apodex-1.1-mini、dots-3-note-preview、lfm-2.5-2.6b、nemotron-3.5-lightning、inkling-small、laguna-s-2.1、inkling、laguna-xs-2.1、north-mini-code、nemotron-3.5-content-safety、nemotron-3-ultra-550b、nemotron-3-nano-omni-30b、gemma-4-26b-a4b、gemma-4-31b、nemotron-3-super-120b。列表经常变。",
+  "sources": [
+   "https://openrouter.ai/api/v1/models",
+   "https://openrouter.ai/docs/api/reference/limits"
+  ],
+  "verified_at": "2026-10-13",
+  "status": "active",
+  "model_released": null,
+  "model_released_note": "多个模型，各自发布时间不同"
+ },
+ {
+  "id": "zhipu-glm-flash",
+  "name": "智谱 GLM-4.7-Flash / GLM-4.6V-Flash",
+  "provider": "智谱 BigModel",
+  "category": "api",
+  "models": [
+   "glm-4.7-flash",
+   "glm-4.6v-flash"
+  ],
+  "free_type": "永久额度",
+  "start": "2026-01-19",
+  "end": null,
+  "quota": "官方标注免费调用（具体并发/速率上限待核实）",
+  "summary": "30B-A3B 开源混合思考模型 + 9B 多模态免费版",
+  "tags": [
+   "中文",
+   "Coding",
+   "多模态",
+   "开源"
+  ],
+  "how_to_get": [
+   "在 bigmodel.cn 注册并实名",
+   "创建 API Key",
+   "模型编码 glm-4.7-flash 或 glm-4.6v-flash"
+  ],
+  "urls": {
+   "official": "https://www.zhipuai.cn/zh/news/148",
+   "docs": "https://docs.bigmodel.cn/cn/guide/models/free/glm-4.7-flash",
+   "signup": "https://bigmodel.cn"
+  },
+  "base_url": "https://open.bigmodel.cn/api/paas/v4",
+  "compat": "OpenAI 风格 chat/completions",
+  "limits": "待核实",
+  "usage_notes": "核实结论：截至 2026-10-13，智谱官方模型概览里标注“免费”的文本模型仍是 GLM-4.7-Flash（另有 GLM-4.5-Flash、GLM-4-Flash-250414 旧款），GLM-5.3-Flash 是付费模型（只在 Coding Plan 夜间活动 9/3–9/20 期间免费过）。所以免费款确实是较老的 4.7-Flash。GLM-4.5-Flash 已于 2026-01-30 下线并自动路由到 4.7-Flash。",
+  "sources": [
+   "https://www.zhipuai.cn/zh/news/148",
+   "https://docs.bigmodel.cn/cn/guide/models/free/glm-4.7-flash",
+   "https://docs.bigmodel.cn/cn/guide/models/free/glm-4.6v-flash",
+   "https://docs.bigmodel.cn/cn/guide/start/model-overview"
+  ],
+  "verified_at": "2026-10-13",
+  "status": "active",
+  "model_released": "2026-01-19",
+  "model_released_note": "GLM-4.7-Flash 官方发布日；GLM-4.6V-Flash 发布日待核实"
+ },
+ {
+  "id": "cloudflare-workers-ai",
+  "name": "Cloudflare Workers AI 免费额度",
+  "provider": "Cloudflare",
+  "category": "api",
+  "models": [
+   "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+   "@cf/openai/gpt-oss-120b",
+   "@cf/zai-org/glm-4.7-flash",
+   "@cf/google/gemma-4-26b-a4b-it",
+   "…"
+  ],
+  "free_type": "每日额度",
+  "start": null,
+  "end": null,
+  "quota": "每天 10,000 Neurons 免费（UTC 0 点重置）",
+  "summary": "Free 计划即可用，含 LLM、嵌入、绘图、语音模型",
+  "tags": [
+   "每日额度",
+   "多模态",
+   "Workers"
+  ],
+  "how_to_get": [
+   "注册 Cloudflare 账号",
+   "控制台 AI → Workers AI 获取 Account ID 与 API Token",
+   "REST 调用或在 Worker 中用 AI binding"
+  ],
+  "urls": {
+   "official": "https://developers.cloudflare.com/workers-ai/",
+   "docs": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+   "signup": "https://dash.cloudflare.com/sign-up"
+  },
+  "base_url": "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/v1",
+  "compat": "OpenAI 兼容端点（另有原生 /ai/run）",
+  "limits": "10,000 Neurons/天；部分模型（kimi-k2.6/k2.7-code、glm-5.2/5.3/5.3-flash、deepseek-v4 系列）需付费计划",
+  "usage_notes": "超额需 Workers Paid，$0.011/1000 Neurons。",
+  "sources": [
+   "https://developers.cloudflare.com/workers-ai/platform/pricing/"
+  ],
+  "verified_at": "2026-10-13",
+  "status": "active",
+  "model_released": null,
+  "model_released_note": "多个模型，各自发布时间不同"
+ },
+ {
+  "id": "workbuddy-step5",
+  "name": "WorkBuddy × Step 5 Preview",
+  "provider": "腾讯 WorkBuddy / 阶跃星辰",
+  "category": "app",
+  "models": [
+   "Step-5-Preview"
+  ],
+  "free_type": "限时",
+  "start": "2026-10-12",
+  "end": "2026-10-25",
+  "quota": "限免期不扣积分（官方额度/每日上限未公布，待核实）",
+  "summary": "国内版、国际版客户端都能选，上下文默认 300K，可调到 1M",
+  "tags": [
+   "办公Agent",
+   "客户端",
+   "1M上下文"
+  ],
+  "how_to_get": [
+   "下载 WorkBuddy 客户端（国内版或国际版）并登录",
+   "模型列表选 Step-5-Preview",
+   "按需调整思考强度和上下文窗口"
+  ],
+  "urls": {
+   "official": "https://www.workbuddy.cn/",
+   "docs": "https://www.workbuddy.cn/docs/workbuddy/FirstTask",
+   "signup": "https://www.workbuddy.cn/"
+  },
+  "base_url": null,
+  "compat": null,
+  "limits": "待核实（高峰期可能有并发/排队限制）",
+  "usage_notes": "仅限 WorkBuddy 内使用，不是 API 额度。10-12 至 10-25 的活动期来自阶跃星辰公众号公告（经 allagent.wiki 转述）和新浪科技报道；我没找到腾讯或阶跃可直接打开的官方网页，截止日仍标待核实。",
+  "sources": [
+   "https://finance.sina.com.cn/jjxw/2026-10-13/doc-inivasei8834603.shtml",
+   "https://www.uied.cn/posts/922036",
+   "https://help.aliyun.com/zh/model-studio/newly-released-models",
+   "https://www.allagent.wiki/blog/ai-freebies-20261013/"
+  ],
+  "verified_at": "2026-10-13",
+  "status": "active",
+  "model_released": "2026-09-21",
+  "model_released_note": "Step 5 Preview 在阿里云百炼的上架日期；阶跃官方发布日待核实"
+ },
+ {
+  "id": "qoder-qwen38-flash",
+  "name": "Qoder × Qwen3.8-Flash",
+  "provider": "阿里 Qoder（原通义灵码）",
+  "category": "app",
+  "models": [
+   "Qwen3.8-Flash"
+  ],
+  "free_type": "限时",
+  "start": "2026-09-18",
+  "end": null,
+  "quota": "计费系数 0.1× → 0.0×，不消耗 Credits；无需领取，Credits 为 0 也能用",
+  "summary": "Qoder CN 与国际版个人用户免费用，已延期，结束时间待官方公告",
+  "tags": [
+   "Coding",
+   "IDE",
+   "CLI",
+   "多模态"
+  ],
+  "how_to_get": [
+   "下载 Qoder（CN: qoder.cn / 国际: qoder.com）并登录个人账号",
+   "模型选择器选 Qwen3.8-Flash",
+   "直接使用，不扣 Credits"
+  ],
+  "urls": {
+   "official": "https://docs.qoder.cn/events/flashoffer",
+   "docs": "https://docs.qoder.com/zh/events/flashoffer",
+   "signup": "https://qoder.cn"
+  },
+  "base_url": null,
+  "compat": null,
+  "limits": "企业订阅（团队版/企业版）不适用；仅限 Qoder 产品内",
+  "usage_notes": "原定 9-30 结束，已延长，10-1 起继续免费，结束时间将提前在活动页公告。",
+  "sources": [
+   "https://docs.qoder.cn/events/flashoffer",
+   "https://docs.qoder.com/zh/events/flashoffer",
+   "https://help.aliyun.com/zh/model-studio/newly-released-models"
+  ],
+  "verified_at": "2026-10-13",
+  "status": "active",
+  "model_released": "2026-08-26",
+  "model_released_note": "Qwen3.8-Flash 在阿里云百炼的上架日期"
+ },
+ {
+  "start": "2026-09-11",
+  "end": "2026-10-31",
+  "base_url": null,
+  "compat": null,
+  "tags": [
+   "办公Agent",
+   "客户端",
+   "多模态"
+  ],
+  "status": "active",
+  "verified_at": "2026-10-13",
+  "model_released": "2026-09-10",
+  "model_released_note": "DeepSeek 官方更新日志",
+  "id": "workbuddy-intl-deepseek-v41-flash",
+  "name": "WorkBuddy 国际版 × DeepSeek V4.1 Flash",
+  "provider": "腾讯 WorkBuddy（国际版 workbuddy.ai）",
+  "category": "app",
+  "models": [
+   "DeepSeek-V4.1-Flash"
+  ],
+  "free_type": "限时",
+  "quota": "活动期免费使用（官方推文未写额度；第三方称倍率 0、不扣积分，待核实）",
+  "summary": "WorkBuddy 官方 X 账号 10-12 宣布免费延长到 10 月 31 日；仅国际版",
+  "how_to_get": [
+   "到 workbuddy.ai 下载国际版客户端并注册（与国内版 workbuddy.cn 账号不通）",
+   "模型列表选 DeepSeek-V4.1-Flash"
+  ],
+  "urls": {
+   "official": "https://www.workbuddy.ai/",
+   "announcement": "https://x.com/WorkBuddy_AI/status/2109673559710974130"
+  },
+  "limits": "待核实（第三方称账户积分清零后免费模型也无法调用）",
+  "usage_notes": "原定 10-9 结束（官方 9-23 推文），后延长至 10-31。国内版同模型据第三方是 0.03× 优惠、不是免费（待核实）。开始日 9-11 来自第三方。",
+  "sources": [
+   "https://x.com/WorkBuddy_AI/status/2109673559710974130",
+   "https://x.com/WorkBuddy_AI/status/2102611673962213506",
+   "https://api-docs.deepseek.com/zh-cn/updates"
+  ]
+ },
+ {
+  "start": null,
+  "end": "2026-10-14",
+  "base_url": "https://api.ant-ling.com/v1/",
+  "compat": "OpenAI / Anthropic（base_url 出自第三方，待核实）",
+  "tags": [
+   "Agent",
+   "Coding",
+   "OpenAI兼容",
+   "Anthropic兼容"
+  ],
+  "status": "active",
+  "verified_at": "2026-10-13",
+  "model_released": "2026-09-30",
+  "model_released_note": "第三方报道的发布日（待官方核实）",
+  "id": "antling-ling-31-flash",
+  "name": "蚂蚁百灵 Ling-3.1-flash",
+  "provider": "蚂蚁百灵 / 蚂蚁数科 DTMaaS",
+  "category": "api",
+  "models": [
+   "Ling-3.1-flash"
+  ],
+  "free_type": "限时",
+  "quota": "免费期输入/输出/缓存 0 元；北京时间 10-14 10:00 结束免费",
+  "summary": "560B-A25B MoE，官方服务开放 256K 上下文，免费期即将结束",
+  "how_to_get": [
+   "到蚂蚁百灵开放平台注册并创建令牌",
+   "Base URL 填 https://api.ant-ling.com/v1/，模型名 Ling-3.1-flash"
+  ],
+  "urls": {
+   "official": "https://www.ant-ling.com/zh/",
+   "docs": "https://developer.ant-ling.com/zh-CN/docs/models/ling/",
+   "pricing": "https://developer.ant-ling.com/zh-CN/docs/models/price/"
+  },
+  "limits": "待核实",
+  "usage_notes": "结束后原价 输入 ¥2 / 输出 ¥6 / 缓存 ¥0.4 每百万 tokens，官网优惠价 ¥0.5 / ¥1.5 / ¥0.1。结束时间出自 DTMaaS 官方通知。",
+  "sources": [
+   "https://maas.antdigital.com/dt-maas-docs/updates/ling-3-1-flash-free-ending",
+   "https://developer.ant-ling.com/zh-CN/docs/models/price/"
+  ]
+ },
+ {
+  "start": null,
+  "end": null,
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1/systemone",
+  "compat": "SystemOne（与 Jev 同类协议）",
+  "tags": [
+   "决策",
+   "路由"
+  ],
+  "status": "active",
+  "verified_at": "2026-10-13",
+  "model_released": "2026-09-24",
+  "model_released_note": "百炼上架日期",
+  "id": "bailian-decision-preview",
+  "name": "阿里云百炼 decision-model-preview",
+  "provider": "阿里云百炼",
+  "category": "api",
+  "models": [
+   "decision-model-preview"
+  ],
+  "free_type": "限时",
+  "quota": "据第三方：北京、新加坡地域限时免费（官方价格页待核实）",
+  "summary": "结构化决策模型：分类 / 是非 / 打分，返回概率与置信度",
+  "how_to_get": [
+   "百炼控制台创建 API Key（新加坡地域用国际站 Model Studio）",
+   "POST /compatible-mode/v1/systemone，model 填 decision-model-preview"
+  ],
+  "urls": {
+   "official": "https://help.aliyun.com/zh/model-studio/newly-released-models"
+  },
+  "limits": "据第三方：每地域 1200 RPM、200 万 TPM，上下文 65536（待核实）",
+  "usage_notes": "上架日期已在官方页核实；“免费”和限流数字只来自第三方 aipromonow，待核实。",
+  "sources": [
+   "https://help.aliyun.com/zh/model-studio/newly-released-models",
+   "https://www.aipromonow.com/promos/aliyun-bailian-decision-model-preview-free-oct2026"
+  ]
+ },
+ {
+  "start": null,
+  "end": null,
+  "base_url": "https://token.sensenova.cn/v1",
+  "compat": "OpenAI 兼容",
+  "tags": [
+   "多模态",
+   "生图",
+   "OpenAI兼容",
+   "Hermes",
+   "OpenClaw"
+  ],
+  "status": "active",
+  "verified_at": "2026-10-13",
+  "model_released": null,
+  "model_released_note": "6.8 Flash Lite 发布日待核实；U1.5 Lite 于 2026-09-11 接入 Token Plan",
+  "id": "sensenova-token-plan",
+  "name": "商汤日日新 Token Plan（公测 Free）",
+  "provider": "商汤 SenseNova",
+  "category": "api",
+  "models": [
+   "sensenova-6.8-flash-lite",
+   "SenseNova U1 Fast",
+   "sensenova-u1.5-lite（生图）"
+  ],
+  "free_type": "限时",
+  "quota": "公测期 ¥0/月：60,000 积分 / 5 小时；U1.5 Lite 生图每 5 小时 1,500 次",
+  "summary": "公测期完全免费，付费档即将上线，截止日期未公布",
+  "how_to_get": [
+   "到 platform.sensenova.cn 注册",
+   "控制台 → API 密钥 创建 sk- 开头的密钥",
+   "Base URL 填 https://token.sensenova.cn/v1，模型如 sensenova-6.8-flash-lite"
+  ],
+  "urls": {
+   "official": "https://www.sensenova.cn/token-plan",
+   "docs": "https://platform.sensenova.cn/docs",
+   "signup": "https://platform.sensenova.cn/"
+  },
+  "limits": "最多 20 个 API Key；特殊模型除外（见官方文档）。第三方称有每周上限，待核实",
+  "usage_notes": "“公测期完全免费开放，付费档位即将上线”出自官方 Token Plan 页。",
+  "sources": [
+   "https://www.sensenova.cn/token-plan",
+   "https://www.sensetime.com/cn/news/sensenova-u1-5-lite-token-plan-20260911-1741"
+  ]
+ },
+ {
+  "start": null,
+  "end": null,
+  "base_url": "https://generativelanguage.googleapis.com/v1beta",
+  "compat": "Gemini 原生（另有 OpenAI 兼容端点）",
+  "tags": [
+   "多模态",
+   "长上下文"
+  ],
+  "status": "active",
+  "verified_at": "2026-10-13",
+  "model_released": null,
+  "model_released_note": "各模型发布日待核实",
+  "id": "gemini-api-free",
+  "name": "Gemini API 免费层",
+  "provider": "Google AI Studio",
+  "category": "api",
+  "models": [
+   "gemini-3.8-flash",
+   "gemini-3.6-flash",
+   "gemini-3.5-flash-lite",
+   "gemini-3.1-flash-lite",
+   "Gemma 4"
+  ],
+  "free_type": "永久额度",
+  "quota": "Free Tier 输入/输出免费；RPM/TPM/RPD 按项目在 AI Studio 显示，官方不公布固定数字",
+  "summary": "官方价格页 Free Tier 列为 Free of charge；Pro/图像/视频模型需付费",
+  "how_to_get": [
+   "用 Google 账号登录 aistudio.google.com",
+   "创建项目与 API Key",
+   "选免费层模型调用"
+  ],
+  "urls": {
+   "official": "https://ai.google.dev/gemini-api/docs/pricing",
+   "docs": "https://ai.google.dev/gemini-api/docs/rate-limits",
+   "signup": "https://aistudio.google.com/"
+  },
+  "limits": "RPD 按太平洋时间午夜重置；具体数字以 AI Studio 为准",
+  "usage_notes": "免费层的内容会被用于改进 Google 产品（官方价格页注明）。中国大陆无法直接访问。具体免费模型清单部分来自第三方整理，以官方价格页为准。",
+  "sources": [
+   "https://ai.google.dev/gemini-api/docs/pricing",
+   "https://ai.google.dev/gemini-api/docs/rate-limits"
+  ]
+ },
+ {
+  "start": null,
+  "end": null,
+  "base_url": "https://opencode.ai/inference/go/v1",
+  "compat": "OpenAI / Anthropic / Responses（按模型）",
+  "tags": [
+   "Coding",
+   "订阅",
+   "OpenAI兼容"
+  ],
+  "status": "active",
+  "verified_at": "2026-10-13",
+  "model_released": null,
+  "model_released_note": "",
+  "id": "opencode-go",
+  "name": "OpenCode Go",
+  "provider": "OpenCode",
+  "category": "plan",
+  "models": [
+   "GLM-5.3 / 5.3-Flash",
+   "Kimi K3 / K2.7 Code",
+   "DeepSeek V4.1 Flash / V4 Pro",
+   "Qwen3.8 Max / Flash",
+   "MiniMax M3",
+   "step-5-preview-free",
+   "longcat-2.5-preview-free",
+   "…"
+  ],
+  "free_type": "包月",
+  "quota": "$10/月（Go Plus $40/月）；按模型设月度美元额度，5 小时窗口占 20%、每周 50%——不是无限量",
+  "summary": "30 多个开源/国产编程模型一个订阅；Step 5 Preview Free、LongCat 2.5 Preview Free 在 Go 内不限量（限时）",
+  "how_to_get": [
+   "登录 OpenCode Console 订阅 Go 并复制 API Key",
+   "TUI 中 /connect 选 OpenCode Go",
+   "/models 选模型"
+  ],
+  "urls": {
+   "official": "https://opencode.ai/docs/go/"
+  },
+  "limits": "例：Go 档 DeepSeek V4.1 Flash 月额度 $80（估算约 17 万次请求/月），GLM-5.3 $15，Kimi K3 $15。超额后仍可用免费模型；可开“Use balance”按量续用",
+  "usage_notes": "仅限单人工作区；要求编码 Agent 类流量，会监控滥用。",
+  "sources": [
+   "https://opencode.ai/docs/go/"
+  ]
+ },
+ {
+  "start": null,
+  "end": null,
+  "base_url": null,
+  "compat": null,
+  "tags": [
+   "Coding",
+   "订阅"
+  ],
+  "status": "active",
+  "verified_at": "2026-10-13",
+  "model_released": null,
+  "model_released_note": "",
+  "id": "glm-coding-plan",
+  "name": "智谱 GLM Coding Plan",
+  "provider": "智谱 BigModel",
+  "category": "plan",
+  "models": [
+   "GLM-5.3",
+   "GLM-5.3-Flash"
+  ],
+  "free_type": "包月",
+  "quota": "Lite 2,000 积分/5h、10,000/周；Pro 12,000/5h、60,000/周；Max 28,000/5h、140,000/周（价格待核实）",
+  "summary": "非高峰时段积分消耗 5 折；官方称最多比按量调用省 92%",
+  "how_to_get": [
+   "bigmodel.cn 订阅 GLM Coding Plan",
+   "按接入指南在 ZCode / Claude Code / OpenCode 等工具中配置"
+  ],
+  "urls": {
+   "official": "https://docs.bigmodel.cn/cn/coding-plan/overview"
+  },
+  "limits": "仅限官方支持的工具内使用；额度耗尽后等下一个 5 小时周期。高峰：工作日 14:00–18:00（北京时间）",
+  "usage_notes": "官方示例：Lite 档 GLM-5.3-Flash 每周约 1.46–2.92 亿 tokens（缓存命中 95%）。各档月费我在官方概览页没找到，待核实。",
+  "sources": [
+   "https://docs.bigmodel.cn/cn/coding-plan/overview"
+  ]
+ },
+ {
+  "start": null,
+  "end": null,
+  "base_url": "https://coding.dashscope.aliyuncs.com/v1",
+  "compat": "OpenAI / Anthropic（/apps/anthropic）",
+  "tags": [
+   "Coding",
+   "订阅",
+   "OpenAI兼容",
+   "Anthropic兼容"
+  ],
+  "status": "active",
+  "verified_at": "2026-10-13",
+  "model_released": null,
+  "model_released_note": "",
+  "id": "bailian-coding-plan",
+  "name": "阿里云百炼 Coding Plan Pro",
+  "provider": "阿里云百炼",
+  "category": "plan",
+  "models": [
+   "qwen3.7-plus",
+   "qwen3.6-plus",
+   "kimi-k2.5",
+   "glm-5",
+   "MiniMax-M2.5",
+   "qwen3.5-plus"
+  ],
+  "free_type": "包月",
+  "quota": "¥200/月（新客首月 ¥39.90）；每 5 小时 6,000 次、每周 45,000 次、每月 90,000 次请求",
+  "summary": "千问 / GLM / Kimi / MiniMax 一个套餐；限量抢购，每天 9:30 补货",
+  "how_to_get": [
+   "Coding Plan 购买页订阅",
+   "获取 sk-sp- 开头的套餐 Key",
+   "Base URL 填 https://coding.dashscope.aliyuncs.com/v1"
+  ],
+  "urls": {
+   "official": "https://help.aliyun.com/zh/model-studio/coding-plan"
+  },
+  "limits": "严禁脚本/后端 API 调用，仅限编程工具；不支持退款；输入输出会用于模型优化",
+  "usage_notes": "Lite 档已停售。一次提问约消耗 5–30+ 次请求。",
+  "sources": [
+   "https://help.aliyun.com/zh/model-studio/coding-plan"
+  ]
+ },
+ {
+  "start": null,
+  "end": null,
+  "base_url": null,
+  "compat": null,
+  "tags": [
+   "Coding",
+   "订阅"
+  ],
+  "status": "active",
+  "verified_at": "2026-10-13",
+  "model_released": null,
+  "model_released_note": "",
+  "id": "kimi-code",
+  "name": "Kimi 会员（含 Kimi Code）",
+  "provider": "月之暗面 Kimi",
+  "category": "plan",
+  "models": [
+   "Kimi K3",
+   "Kimi K2.x"
+  ],
+  "free_type": "包月",
+  "quota": "Plus ¥99/月起可用 Kimi Code（Pro ¥199、Max ¥699）；新套餐取消周限额，只保留 5 小时滚动窗口 + 月总额度",
+  "summary": "CLI、VS Code、第三方工具共用会员额度；超额可开加油包",
+  "how_to_get": [
+   "在 Kimi Code 套餐页订阅 Plus 及以上",
+   "登录 Kimi Code 控制台创建 API Key 或 CLI /login"
+  ],
+  "urls": {
+   "official": "https://www.kimi.com/help/kimi-code/benefits",
+   "pricing": "https://www.kimi.com/help/membership/membership-pricing"
+  },
+  "limits": "月总额度具体数字官方未公布（待核实）；K3 1M 上下文需 Pro 及以上",
+  "usage_notes": "Go 档 ¥49/月不含 Kimi Code。价格出自官方帮助页（截图于 2026-10-12）。",
+  "sources": [
+   "https://www.kimi.com/help/kimi-code/benefits",
+   "https://www.kimi.com/help/membership/membership-pricing"
+  ]
+ },
+ {
+  "start": null,
+  "end": null,
+  "base_url": null,
+  "compat": null,
+  "tags": [
+   "Coding",
+   "订阅",
+   "多模态"
+  ],
+  "status": "active",
+  "verified_at": "2026-10-13",
+  "model_released": null,
+  "model_released_note": "",
+  "id": "minimax-m-plan",
+  "name": "MiniMax M Plan",
+  "provider": "MiniMax",
+  "category": "plan",
+  "models": [
+   "M3.1 Flash Preview",
+   "H3（视频，Explore 起）"
+  ],
+  "free_type": "包月",
+  "quota": "Go / Explore（3×）/ Build（7.5×）三档；价格官方页未直接显示（第三方称国内 Go ¥49/月，待核实）",
+  "summary": "可在 MiniMax Code、Claude Code、OpenCode、Hermes、OpenClaw 等使用",
+  "how_to_get": [
+   "minimax.io/m-plan 订阅",
+   "控制台获取 M Plan API Key 后接入工具"
+  ],
+  "urls": {
+   "official": "https://platform.minimax.io/docs/m-plan/intro"
+  },
+  "limits": "5 小时与每周窗口（第三方说法，待核实）",
+  "usage_notes": "档位与模型出自官方文档；价格与具体额度待核实。",
+  "sources": [
+   "https://platform.minimax.io/docs/m-plan/intro"
+  ]
+ }
 ]

@@ -30,3 +30,9 @@
 | sources | 来源链接数组 |
 | verified_at | 核实日期 |
 | status | `active` / `ended` |
+
+## v2 新增
+- 分类：`api`（API 形式）/ `app`（应用类）/ `plan`（包月/不限量·高性价比，排在最后）。`plan` 的 `free_type` 为 `包月`。
+- `model_released`：模型发布日期（`YYYY-MM-DD` 或 `null`），`model_released_note` 说明出处（如“百炼上架日期”）。
+- 默认排序：按 `model_released` 从新到旧。**“比较老”规则**：发布日期距今超过 183 天（约 6 个月）的条目自动打“比较老”标签并排到同类后面；已过期的排最后。7 天内到期仍高亮。
+- 主题：浅色 / 深色，默认跟随系统，手动切换后记在 localStorage。

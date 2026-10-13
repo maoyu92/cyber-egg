@@ -6,7 +6,7 @@ const today = arg ? new Date(arg.slice(8) + 'T00:00:00+08:00') : new Date();
 let flagged = 0;
 for (const o of offers) {
   if (!o.end) continue;
-  const days = Math.ceil((new Date(o.end + 'T23:59:59+08:00') - today) / 864e5);
+  const days = Math.floor((new Date(o.end + 'T23:59:59+08:00') - today) / 864e5);
   if (days < 0) { console.log(`⛔ 已过期 ${o.name}（${o.end}）`); flagged++; }
   else if (days <= 7) { console.log(`⚠️ ${days} 天内到期 ${o.name}（${o.end}）`); flagged++; }
 }
