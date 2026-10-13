@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>赛博鸡蛋 · 免费 AI API 与应用清单</title>
+<meta name="description" content="持续更新的免费 AI API / 免费 AI 应用清单，附到期提醒与额度说明">
+<style>
+:root{--bg:#0b1220;--card:#121c31;--line:#22314f;--txt:#e6ecf7;--mut:#8ea0bf;--blue:#4c8dff;--warm:#ffb547;--red:#ff6b6b;--ok:#3ecf8e}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1200px 600px at 10% -10%,#1a2b52 0,transparent 60%),var(--bg);color:var(--txt);font:15px/1.6 -apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+a{color:var(--blue);word-break:break-all}.wrap{max-width:1100px;margin:0 auto;padding:20px 16px 60px}
+header h1{margin:8px 0 4px;font-size:30px}header h1 span{color:var(--warm)}header p{color:var(--mut);margin:4px 0}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 14px;align-items:center}
+.tab{background:var(--card);border:1px solid var(--line);color:var(--txt);padding:7px 14px;border-radius:999px;cursor:pointer;font-size:14px}
+.tab.on{background:var(--blue);border-color:var(--blue)}select{background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:7px;margin-left:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.card.soon{border-color:var(--warm);box-shadow:0 0 0 1px var(--warm) inset}.card.expired{opacity:.45;filter:grayscale(1)}
+.top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.name{font-size:17px;font-weight:700}.prov{color:var(--mut);font-size:13px}
+.badge{font-size:12px;padding:2px 8px;border-radius:6px;white-space:nowrap}.api{background:#1d3566;color:#9cc0ff}.app{background:#4a3417;color:#ffd08a}
+.cd{font-weight:700}.cd.soon{color:var(--warm)}.cd.exp{color:var(--red)}.cd.open{color:var(--ok)}
+.quota{color:#c9d5ea;font-size:14px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:6px;padding:1px 7px}
+details{border-top:1px dashed var(--line);padding-top:8px;margin-top:auto}summary{cursor:pointer;color:var(--warm);font-weight:600}
+dl{margin:8px 0 0;font-size:13.5px}dt{color:var(--mut);margin-top:8px}dd{margin:2px 0 0}ol{margin:2px 0;padding-left:20px}code{background:#0a1426;padding:1px 5px;border-radius:4px;font-size:12.5px;word-break:break-all}
+section.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:22px}section.box h2{margin:0 0 6px;font-size:18px}
+.mut{color:var(--mut);font-size:13px}footer{margin-top:30px;color:var(--mut);font-size:12.5px;text-align:center}
+@media(max-width:520px){header h1{font-size:24px}.grid{grid-template-columns:1fr}select{margin-left:0;width:100%}}
+</style></head><body><div class="wrap">
+<header><div class="mut">🥚 cyber-egg</div><h1>赛博<span>鸡蛋</span></h1>
+<p>收集市面上<strong>现在就能免费用</strong>的 AI API 和 AI 应用：免费到哪天、额度多少、怎么领取。</p>
+<p class="mut">每条都标了来源和核实时间，“待核实”表示官方没写清楚或还没确认。免费政策变得很快，用之前请再看一眼官方页面。</p></header>
+<div class="bar"><button class="tab on" data-c="all">全部</button><button class="tab" data-c="api">API 形式</button><button class="tab" data-c="app">应用类</button>
+<select id="sort"><option value="end">按到期时间（快到期在前）</option><option value="name">按名称</option></select></div>
+<div class="grid" id="grid"></div>
+<section class="box" id="submit"><h2>📮 提交线索</h2><p>发现新的免费模型或应用？欢迎到 GitHub 仓库提 PR 修改 <code>data/offers.json</code>，或提 Issue。</p><p class="mut">匿名提交表单筹备中（计划用 Cloudflare Worker + D1，人工审核后入库）。</p></section>
+<section class="box" id="comments"><h2>💬 评论区</h2><p class="mut">计划接入 Giscus（基于 GitHub Discussions），暂未开放。</p></section>
+<footer>数据最后构建：__BUILT__ · 时间均为北京时间 · 本站不保证信息实时准确</footer></div>
+<script>
+const OFFERS=/*__DATA__*/[];
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const link=u=>/^https?:/.test(u)?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`:esc(u);
+function days(o){if(!o.end)return null;return Math.ceil((new Date(o.end+'T23:59:59+08:00')-Date.now())/864e5)}
+let cat='all',sort='end';
+function render(){
+ let list=OFFERS.filter(o=>cat==='all'||o.category===cat);
+ list.sort(sort==='name'?(a,b)=>a.name.localeCompare(b.name,'zh'):(a,b)=>{const da=days(a),db=days(b);const k=d=>d===null?1e6:d<0?2e6-d:d;return k(da)-k(db)});
+ grid.innerHTML=list.map(o=>{const d=days(o);let cls='',cd;
+  if(d===null)cd=`<span class="cd open">${o.free_type==='限时'?'限时 · 截止日期未公布':esc(o.free_type)}</span>`;
+  else if(d<0){cls='expired';cd=`<span class="cd exp">已于 ${o.end} 结束</span>`}
+  else{if(d<=7)cls='soon';cd=`<span class="cd ${d<=7?'soon':''}">免费至 ${o.end} · 还剩 ${d} 天</span>`}
+  const u=o.urls||{};const names={official:'官网',docs:'文档',signup:'注册/获取',github:'GitHub'};
+  return `<article class="card ${cls}"><div class="top"><div><div class="name">${esc(o.name)}</div><div class="prov">${esc(o.provider)}</div></div><span class="badge ${o.category}">${o.category==='api'?'API':'应用'}</span></div>
+  <div>${cd}</div><div class="quota">${esc(o.quota)}</div><div class="mut">${esc(o.summary)}</div><div class="tags">${(o.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+  <details><summary>详情</summary><dl>
+  <dt>怎么获取</dt><dd><ol>${o.how_to_get.map(s=>`<li>${esc(s)}</li>`).join('')}</ol></dd>
+  <dt>模型</dt><dd>${o.models.map(m=>`<code>${esc(m)}</code>`).join(' ')}</dd>
+  <dt>链接</dt><dd>${Object.entries(u).map(([k,v])=>`${names[k]||k}：${link(v)}`).join('<br>')}</dd>
+  ${o.base_url?`<dt>Base URL / 兼容</dt><dd><code>${esc(o.base_url)}</code><br>${esc(o.compat)}</dd>`:''}
+  <dt>额度与限制</dt><dd>${esc(o.limits)}</dd><dt>免费类型 / 时间</dt><dd>${esc(o.free_type)}：${o.start||'—'} → ${o.end||'未公布'}</dd>
+  <dt>备注</dt><dd>${esc(o.usage_notes)}</dd><dt>来源</dt><dd>${o.sources.map(link).join('<br>')}</dd><dt>核实时间</dt><dd>${esc(o.verified_at)}</dd></dl></details></article>`}).join('');
+}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');cat=b.dataset.c;render()});
+document.getElementById('sort').onchange=e=>{sort=e.target.value;render()};render();
+</script></body></html>
