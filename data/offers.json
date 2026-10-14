@@ -417,8 +417,8 @@
    "OpenAI兼容",
    "Anthropic兼容"
   ],
-  "status": "active",
-  "verified_at": "2026-10-13",
+  "status": "ended",
+  "verified_at": "2026-10-14",
   "model_released": "2026-09-30",
   "model_released_note": "第三方报道的发布日（待官方核实）",
   "id": "antling-ling-31-flash",
@@ -429,8 +429,8 @@
    "Ling-3.1-flash"
   ],
   "free_type": "限时",
-  "quota": "免费期输入/输出/缓存 0 元；北京时间 10-14 10:00 结束免费",
-  "summary": "560B-A25B MoE，官方服务开放 256K 上下文，免费期即将结束",
+  "quota": "免费期已于北京时间 2026-10-14 10:00 结束，现按量计费",
+  "summary": "560B-A25B MoE，官方服务开放 256K 上下文，免费期已结束",
   "how_to_get": [
    "到蚂蚁百灵开放平台注册并创建令牌",
    "Base URL 填 https://api.ant-ling.com/v1/，模型名 Ling-3.1-flash"
@@ -441,10 +441,11 @@
    "pricing": "https://developer.ant-ling.com/zh-CN/docs/models/price/"
   },
   "limits": "待核实",
-  "usage_notes": "结束后原价 输入 ¥2 / 输出 ¥6 / 缓存 ¥0.4 每百万 tokens，官网优惠价 ¥0.5 / ¥1.5 / ¥0.1。结束时间出自 DTMaaS 官方通知。",
+  "usage_notes": "结束后原价 输入 ¥2 / 输出 ¥6 / 缓存 ¥0.4 每百万 tokens，官网优惠价 ¥0.5 / ¥1.5 / ¥0.1。结束时间出自 DTMaaS 官方通知。 2026-10-14 核实：OpenRouter 上 inclusionai/ling-3.1-flash 已恢复收费（输入 $0.075 / 输出 $0.225 每百万 tokens）。",
   "sources": [
    "https://maas.antdigital.com/dt-maas-docs/updates/ling-3-1-flash-free-ending",
-   "https://developer.ant-ling.com/zh-CN/docs/models/price/"
+   "https://developer.ant-ling.com/zh-CN/docs/models/price/",
+   "https://openrouter.ai/inclusionai/ling-3.1-flash"
   ]
  },
  {

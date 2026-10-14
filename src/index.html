@@ -44,9 +44,9 @@ const age=o=>o.model_released?(Date.now()-new Date(o.model_released))/864e5:null
 const isOld=o=>{const a=age(o);return a!==null&&a>OLD_DAYS};
 function cmp(a,b){if(sort==='name')return a.name.localeCompare(b.name,'zh');
  if(sort==='end'){const k=d=>d===null?1e6:d<0?2e6-d:d;return k(days(a))-k(days(b))}
- const ka=o=>(days(o)!==null&&days(o)<0?2:isOld(o)?1:0);if(ka(a)!==ka(b))return ka(a)-ka(b);
+ const ka=o=>(o.status==='ended'||(days(o)!==null&&days(o)<0)?2:isOld(o)?1:0);if(ka(a)!==ka(b))return ka(a)-ka(b);
  const ra=a.model_released||'',rb=b.model_released||'';return rb.localeCompare(ra)}
-function card(o){const d=days(o);let cls='',cd;
+function card(o){const d=o.status==='ended'&&(days(o)===null||days(o)>=0)?-1:days(o);let cls='',cd;
   if(d===null)cd=`<span class="cd open">${o.free_type==='限时'?'限时 · 截止日期未公布':esc(o.free_type)}</span>`;
   else if(d<0){cls='expired';cd=`<span class="cd exp">已于 ${o.end} 结束</span>`}
   else{if(d<=7)cls='soon';cd=`<span class="cd ${d<=7?'soon':''}">${o.category==='plan'?'优惠至':'免费至'} ${o.end} · ${d===0?'今天结束':'还剩 '+d+' 天'}</span>`}
