@@ -21,7 +21,7 @@ header h1{margin:8px 0 4px;font-size:30px}header h1 span{color:var(--warm)}heade
 details{border-top:1px dashed var(--line);padding-top:8px;margin-top:auto}summary{cursor:pointer;color:var(--warm);font-weight:600}
 dl{margin:8px 0 0;font-size:13.5px}dt{color:var(--mut);margin-top:8px}dd{margin:2px 0 0}ol{margin:2px 0;padding-left:20px}code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:12.5px;word-break:break-all}
 section.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:22px}section.box h2{margin:0 0 6px;font-size:18px}
-.mut{color:var(--mut);font-size:13px}footer{margin-top:30px;color:var(--mut);font-size:12.5px;text-align:center}
+.mut{color:var(--mut);font-size:13px}.visits{display:inline-block;margin-bottom:8px;padding:4px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--txt);font-size:13px}.visits b{color:var(--warm)}footer{margin-top:30px;color:var(--mut);font-size:12.5px;text-align:center}
 @media(max-width:520px){header h1{font-size:24px}.grid{grid-template-columns:1fr}select{margin-left:0;width:100%}}
 </style></head><body><div class="wrap">
 <header><button id="theme" aria-label="切换主题"></button><div class="mut">🥚 cyber-egg</div><h1>赛博<span>鸡蛋</span></h1>
@@ -32,7 +32,7 @@ section.box{background:var(--card);border:1px solid var(--line);border-radius:14
 <div id="grid"></div>
 <section class="box" id="submit"><h2>📮 提交线索</h2><p>发现新的免费模型或应用？欢迎到 GitHub 仓库提 PR 修改 <code>data/offers.json</code>，或提 Issue。</p><p class="mut">匿名提交表单筹备中（计划用 Cloudflare Worker + D1，人工审核后入库）。</p></section>
 <section class="box" id="comments"><h2>💬 评论区</h2><p class="mut">计划接入 Giscus（基于 GitHub Discussions），暂未开放。</p></section>
-<footer>数据最后构建：__BUILT__ · 时间均为北京时间 · 本站不保证信息实时准确</footer></div>
+<footer><div id="visits" class="visits">👀 统计加载中…</div>数据最后构建：__BUILT__ · 时间均为北京时间 · 本站不保证信息实时准确</footer></div>
 <script>
 const OFFERS=/*__DATA__*/[];
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -71,4 +71,7 @@ const th=document.getElementById('theme');function lbl(){th.textContent=document
 th.onclick=()=>{const n=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=n;localStorage.setItem('theme',n);lbl()};
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));b.classList.add('on');cat=b.dataset.c;render()});
 document.getElementById('sort').onchange=e=>{sort=e.target.value;render()};render();
-</script></body></html>
+</script><script>fetch("/api/visit",{method:"POST"}).then(r=>r.json()).then(d=>{if(d.error)throw 0;document.getElementById("visits").innerHTML=`👀 累计 <b>${d.person_times}</b> 人次 · 今日 <b>${d.today}</b> 人次 · 浏览 <b>${d.views}</b> 次`}).catch(()=>document.getElementById("visits").remove())</script>
+<!-- Cloudflare Web Analytics -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"5cffa30d768d448e8a73afe76b64a77b"}'></script>
+</body></html>

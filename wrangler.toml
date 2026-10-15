@@ -1,0 +1,9 @@
+name = "cyber-egg"
+pages_build_output_dir = "public"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cyber-egg-stats"
+database_id = "f1edf0cd-ab02-432a-91ca-c21ddc54286a"
+migrations_dir = "migrations"
