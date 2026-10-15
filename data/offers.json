@@ -1,5 +1,47 @@
 [
  {
+  "provider": "OpenCode Zen",
+  "category": "api",
+  "free_type": "限时",
+  "start": null,
+  "end": null,
+  "how_to_get": [
+   "Console 登录拿 API Key，TUI 中 /connect 选 OpenCode",
+   "/models 选 DeepSeek V4.1 Flash Free，或调用 chat/completions 并把 model 设为 deepseek-v4.1-flash-free"
+  ],
+  "base_url": "https://opencode.ai/inference/v1",
+  "compat": "OpenAI 兼容（chat/completions）",
+  "urls": {
+   "official": "https://opencode.ai/docs/zen/",
+   "docs": "https://opencode.ai/docs/zen/",
+   "signup": "https://opencode.ai/auth"
+  },
+  "sources": [
+   "https://opencode.ai/docs/zen/",
+   "https://opencode.ai/inference/v1/models",
+   "https://models.dev/api.json"
+  ],
+  "verified_at": "2026-10-15",
+  "status": "active",
+  "model_released": "2026-09-10",
+  "id": "opencode-deepseek-v4.1-flash-free",
+  "name": "DeepSeek V4.1 Flash Free",
+  "models": [
+   "deepseek-v4.1-flash-free"
+  ],
+  "tags": [
+   "Coding",
+   "新",
+   "200K上下文",
+   "零留存"
+  ],
+  "summary": "DeepSeek V4.1 Flash 的免费版（200K 上下文，付费版为 1M），OpenCode Zen 限时免费",
+  "quota": "输入/输出/缓存读均 Free；官方只写“限时”，截止日期未公布",
+  "limits": "上下文 200K、最大输出 32K（models.dev）；付费版 deepseek-v4.1-flash 为 1M/384K。官方未公布免费版速率上限（待核实）。截至 2026-10-15 不在 OpenCode Go 模型列表中",
+  "usage_notes": "官方：供应商零留存、不用于训练。",
+  "model_released_note": "DeepSeek V4.1 Flash 发布日期（models.dev）；免费版上线日期待核实"
+ },
+ {
   "provider": "OpenCode Go / Zen",
   "category": "api",
   "free_type": "限时",
@@ -220,6 +262,7 @@
   "provider": "OpenCode (anoma.ly)",
   "category": "api",
   "models": [
+   "deepseek-v4.1-flash-free",
    "step-5-preview-free",
    "longcat-2.5-preview-free",
    "mimo-v2.6-flash-free",
