@@ -1,6 +1,6 @@
 <!doctype html><html lang="zh-CN"><head><script>(function(){var q=new URLSearchParams(location.search).get('theme'),t=q||localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t;else if(matchMedia('(prefers-color-scheme: light)').matches)document.documentElement.dataset.theme='light'})()</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>赛博鸡蛋 · 免费 AI API 与应用清单</title>
-<meta name="description" content="持续更新的免费 AI API / 免费 AI 应用清单，附到期提醒与额度说明">
+<title>赛博鸡蛋 · 免费 Token / 折扣 / 限时优惠 AI 情报</title>
+<meta name="description" content="持续收集免费 Token、优惠折扣、限时免费的 AI 模型与应用，附到期提醒、额度与来源">
 <style>
 :root{--bg:#141d30;--glow:#22355f;--card:#1b263d;--line:#2e3e5f;--txt:#e8eef8;--mut:#9aabc8;--blue:#5b97ff;--warm:#ffb547;--red:#ff7a7a;--ok:#46d39a;--code:#111a2c;--q:#d0dbee;--apiBg:#24407a;--apiTx:#b5d0ff;--appBg:#56401f;--appTx:#ffd89a;--planBg:#244a3d;--planTx:#a6f0cf;--oldBg:#3b3346;--oldTx:#d9c3f0}
 :root[data-theme=light]{--bg:#f4f6fb;--glow:#dfe8fb;--card:#fff;--line:#dbe2ee;--txt:#1b2437;--mut:#5d6b84;--blue:#2f6fe4;--warm:#d9820b;--red:#d64545;--ok:#18935f;--code:#eef2f8;--q:#2b3650;--apiBg:#e2ecff;--apiTx:#2353ad;--appBg:#fff0d9;--appTx:#8a5600;--planBg:#dcf5ea;--planTx:#17704a;--oldBg:#efe8f7;--oldTx:#6b4b8f}
@@ -16,7 +16,7 @@ header h1{margin:8px 0 4px;font-size:30px}header h1 span{color:var(--warm)}heade
 .card.soon{border-color:var(--warm);box-shadow:0 0 0 1px var(--warm) inset}.card.expired{opacity:.45;filter:grayscale(1)}
 .top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.name{font-size:17px;font-weight:700}.prov{color:var(--mut);font-size:13px}
 .badge{font-size:12px;padding:2px 8px;border-radius:6px;white-space:nowrap}.api{background:var(--apiBg);color:var(--apiTx)}.app{background:var(--appBg);color:var(--appTx)}.plan{background:var(--planBg);color:var(--planTx)}.tag.old{background:var(--oldBg);color:var(--oldTx);border-color:transparent}
-.cd{font-weight:700}.cd.soon{color:var(--warm)}.cd.exp{color:var(--red)}.cd.open{color:var(--ok)}
+.otype{font-size:12px;padding:1px 7px;border-radius:6px;font-weight:600;border:1px solid}.ot-free{color:var(--ok)}.ot-off{color:var(--blue)}.ot-lim{color:var(--warm)}.cd{font-weight:700}.cd.soon{color:var(--warm)}.cd.exp{color:var(--red)}.cd.open{color:var(--ok)}
 .quota{color:var(--q);font-size:14px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:6px;padding:1px 7px}
 details{border-top:1px dashed var(--line);padding-top:8px;margin-top:auto}summary{cursor:pointer;color:var(--warm);font-weight:600}
 dl{margin:8px 0 0;font-size:13.5px}dt{color:var(--mut);margin-top:8px}dd{margin:2px 0 0}ol{margin:2px 0;padding-left:20px}code{background:var(--code);padding:1px 5px;border-radius:4px;font-size:12.5px;word-break:break-all}
@@ -25,7 +25,7 @@ section.box{background:var(--card);border:1px solid var(--line);border-radius:14
 @media(max-width:520px){header h1{font-size:24px}.grid{grid-template-columns:1fr}select{margin-left:0;width:100%}}
 </style></head><body><div class="wrap">
 <header><button id="theme" aria-label="切换主题"></button><div class="mut">🥚 cyber-egg</div><h1>赛博<span>鸡蛋</span></h1>
-<p>收集市面上<strong>现在就能免费用</strong>的 AI API 和 AI 应用：免费到哪天、额度多少、怎么领取。</p>
+<p>多方收集 AI 圈的<strong>免费 Token、优惠折扣和限时优惠</strong>：免费到哪天、额度多少、怎么领取。</p>
 <p class="mut">默认按模型发布时间从新到旧排；发布超过 6 个月的模型标“比较老”并排到后面。7 天内到期的卡片会高亮。每条都标了来源和核实时间，“待核实”表示官方没写清楚或还没确认。免费政策变得很快，用之前请再看一眼官方页面。</p></header>
 <div class="bar"><button class="tab on" data-c="all">全部</button><button class="tab" data-c="api">API 形式</button><button class="tab" data-c="app">应用类</button><button class="tab" data-c="plan">包月/不限量·高性价比</button>
 <select id="sort"><option value="rel">按发布时间（新→旧）</option><option value="end">按到期时间（快到期在前）</option><option value="name">按名称</option></select></div>
@@ -52,7 +52,8 @@ function card(o){const d=o.status==='ended'&&(days(o)===null||days(o)>=0)?-1:day
   else{if(d<=7)cls='soon';cd=`<span class="cd ${d<=7?'soon':''}">${o.category==='plan'?'优惠至':'免费至'} ${o.end} · ${d===0?'今天结束':'还剩 '+d+' 天'}</span>`}
   const u=o.urls||{};const names={official:'官网',docs:'文档',signup:'注册/获取',github:'GitHub',pricing:'价格',announcement:'官方公告'};
   const rel=o.model_released?`模型发布 ${o.model_released}`:'发布时间：'+(o.model_released_note||'待核实');
-  const tags=(isOld(o)?['<span class="tag old">比较老</span>']:[]).concat((o.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`)).join('');
+  const ot=(o.free_type==='包月'?[['折扣','off']]:[['免费','free']]).concat(o.free_type==='限时'?[['限时','lim']]:[]).map(([t,c])=>`<span class="otype ot-${c}">${t}</span>`);
+  const tags=ot.concat(isOld(o)?['<span class="tag old">比较老</span>']:[]).concat((o.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`)).join('');
   const lab={api:'API',app:'应用',plan:'包月'}[o.category];
   return `<article class="card ${cls}"><div class="top"><div><div class="name">${esc(o.name)}</div><div class="prov">${esc(o.provider)}</div></div><span class="badge ${o.category}">${lab}</span></div>
   <div>${cd}</div><div class="quota">${esc(o.quota)}</div><div class="mut">${esc(o.summary)}</div><div class="mut">🗓 ${esc(rel)}</div><div class="tags">${tags}</div>

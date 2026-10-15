@@ -1,5 +1,130 @@
 [
  {
+  "provider": "OpenCode Go / Zen",
+  "category": "api",
+  "free_type": "限时",
+  "start": null,
+  "end": null,
+  "how_to_get": [
+   "Zen：Console 登录拿 API Key，/connect 选 OpenCode；或订阅 OpenCode Go 后 /connect 选 OpenCode Go",
+   "/models 选对应 *-free 模型，或直接调 chat/completions"
+  ],
+  "base_url": "https://opencode.ai/inference/v1（Go：https://opencode.ai/inference/go/v1）",
+  "compat": "OpenAI 兼容（chat/completions）",
+  "urls": {
+   "official": "https://opencode.ai/docs/go/",
+   "docs": "https://opencode.ai/docs/zen/",
+   "signup": "https://opencode.ai/auth"
+  },
+  "sources": [
+   "https://opencode.ai/docs/go/",
+   "https://opencode.ai/docs/zen/",
+   "https://opencode.ai/zen/go/v1/models（Go Key 查询 2026-10-15）"
+  ],
+  "verified_at": "2026-10-15",
+  "status": "active",
+  "model_released": null,
+  "id": "opencode-longcat-2.5-free",
+  "name": "LongCat 2.5 Preview Free",
+  "models": [
+   "longcat-2.5-preview-free"
+  ],
+  "tags": [
+   "Coding",
+   "不限量",
+   "零留存"
+  ],
+  "summary": "美团 LongCat 2.5 预览版，OpenCode 限时免费，Go 内不限次数",
+  "quota": "输入/输出/缓存读均 Free；OpenCode Go 内每 5 小时/周/月请求数 Unlimited（∞）；官方仅写“限时”，截止日期未公布",
+  "limits": "Go 文档请求数表：5 小时 / 每周 / 每月均 Unlimited；Zen 按量通道无单独速率说明（待核实）；上下文长度待核实",
+  "usage_notes": "官方：供应商零留存、不用于训练。“美团 LongCat”归属按模型名推断，待核实。",
+  "model_released_note": "OpenCode 上线日期待核实"
+ },
+ {
+  "provider": "OpenCode Go / Zen",
+  "category": "api",
+  "free_type": "限时",
+  "start": null,
+  "end": null,
+  "how_to_get": [
+   "Zen：Console 登录拿 API Key，/connect 选 OpenCode；或订阅 OpenCode Go 后 /connect 选 OpenCode Go",
+   "/models 选对应 *-free 模型，或直接调 chat/completions"
+  ],
+  "base_url": "https://opencode.ai/inference/v1（Go：https://opencode.ai/inference/go/v1）",
+  "compat": "OpenAI 兼容（chat/completions）",
+  "urls": {
+   "official": "https://opencode.ai/docs/go/",
+   "docs": "https://opencode.ai/docs/zen/",
+   "signup": "https://opencode.ai/auth"
+  },
+  "sources": [
+   "https://opencode.ai/docs/go/",
+   "https://opencode.ai/docs/zen/",
+   "https://opencode.ai/zen/go/v1/models（Go Key 查询 2026-10-15）"
+  ],
+  "verified_at": "2026-10-15",
+  "status": "active",
+  "model_released": null,
+  "id": "opencode-step-5-free",
+  "name": "Step 5 Preview Free",
+  "models": [
+   "step-5-preview-free"
+  ],
+  "tags": [
+   "Coding",
+   "新",
+   "不限量",
+   "零留存"
+  ],
+  "summary": "阶跃 Step 5 预览版，OpenCode 限时免费，Go 内不限次数",
+  "quota": "输入/输出/缓存读均 Free；OpenCode Go 内每 5 小时/周/月请求数 Unlimited（∞）；官方仅写“限时”，截止日期未公布",
+  "limits": "Go 文档请求数表：5 小时 / 每周 / 每月均 Unlimited；Zen 按量通道无单独速率说明（待核实）；上下文长度待核实",
+  "usage_notes": "官方：供应商零留存、不用于训练。另见 WorkBuddy × Step 5 Preview 条目。",
+  "model_released_note": "OpenCode 上线日期待核实"
+ },
+ {
+  "provider": "OpenCode Go / Zen",
+  "category": "api",
+  "free_type": "限时",
+  "start": null,
+  "end": null,
+  "how_to_get": [
+   "Zen：Console 登录拿 API Key，/connect 选 OpenCode；或订阅 OpenCode Go 后 /connect 选 OpenCode Go",
+   "/models 选对应 *-free 模型，或直接调 chat/completions"
+  ],
+  "base_url": "https://opencode.ai/inference/v1（Go：https://opencode.ai/inference/go/v1）",
+  "compat": "OpenAI 兼容（chat/completions）",
+  "urls": {
+   "official": "https://opencode.ai/docs/go/",
+   "docs": "https://opencode.ai/docs/zen/",
+   "signup": "https://opencode.ai/auth"
+  },
+  "sources": [
+   "https://opencode.ai/docs/go/",
+   "https://opencode.ai/docs/zen/",
+   "https://opencode.ai/zen/go/v1/models（Go Key 查询 2026-10-15）"
+  ],
+  "verified_at": "2026-10-15",
+  "status": "active",
+  "model_released": null,
+  "id": "opencode-cat-jam-free",
+  "name": "Cat Jam Free",
+  "models": [
+   "cat-jam-free"
+  ],
+  "tags": [
+   "Coding",
+   "隐身模型",
+   "不限量",
+   "有地区限制"
+  ],
+  "summary": "OpenCode 上的隐身（stealth）模型，限时免费，Go 内不限次数；背后厂商未公开",
+  "quota": "输入/输出/缓存读均 Free；OpenCode Go 内每 5 小时/周/月请求数 Unlimited（∞）；官方仅写“限时”，截止日期未公布",
+  "limits": "Go 文档请求数表：5 小时 / 每周 / 每月均 Unlimited；Zen 按量通道无单独速率说明（待核实）；上下文长度待核实",
+  "usage_notes": "⚠️ 不对中国大陆（含港澳）、俄罗斯、伊朗等地区开放。数据不用于训练，但出于安全保留 30 天。真实模型/厂商未公开（待核实）。",
+  "model_released_note": "隐身模型，发布时间待核实"
+ },
+ {
   "id": "unisound-u2-flash",
   "name": "云知声 U2 Flash",
   "provider": "云知声 MaaS",
@@ -134,12 +259,12 @@
   "base_url": "https://opencode.ai/inference/v1",
   "compat": "OpenAI 兼容（chat/completions）；Jev 为 /systemone",
   "limits": "官方未公布免费模型的次数/速率上限（待核实）",
-  "usage_notes": "隐私：Big Pickle、Cat Jam、Exo、MiMo、Ling 等免费期数据可能用于改进模型；Nemotron 免费端点会记录日志；Muse Spark Contributor 以数据换训练。Step 5 Preview / LongCat / Space Bunny 为零留存。OpenCode Go 订阅里也有 step-5-preview-free、longcat-2.5-preview-free。",
+  "usage_notes": "隐私：Big Pickle、Exo、MiMo 等免费期数据可能用于改进模型；Nemotron 免费端点会记录日志；Muse Spark Contributor 以数据换训练；Cat Jam Free 不用于训练但保留 30 天，且不对中国大陆/港澳开放。Step 5 Preview / LongCat 2.5 Preview / Space Bunny 为零留存。",
   "sources": [
    "https://opencode.ai/docs/zen/",
-   "本机 opencode models 列表 2026-10-13"
+   "https://opencode.ai/inference/v1/models"
   ],
-  "verified_at": "2026-10-13",
+  "verified_at": "2026-10-15",
   "status": "active",
   "model_released": null,
   "model_released_note": "多个模型，各自发布时间不同"
@@ -585,7 +710,7 @@
    "OpenAI兼容"
   ],
   "status": "active",
-  "verified_at": "2026-10-13",
+  "verified_at": "2026-10-15",
   "model_released": null,
   "model_released_note": "",
   "id": "opencode-go",
@@ -600,11 +725,12 @@
    "MiniMax M3",
    "step-5-preview-free",
    "longcat-2.5-preview-free",
+   "cat-jam-free",
    "…"
   ],
   "free_type": "包月",
   "quota": "$10/月（Go Plus $40/月）；按模型设月度美元额度，5 小时窗口占 20%、每周 50%——不是无限量",
-  "summary": "30 多个开源/国产编程模型一个订阅；Step 5 Preview Free、LongCat 2.5 Preview Free 在 Go 内不限量（限时）",
+  "summary": "30 多个编程模型一个订阅；LongCat 2.5 Preview Free、Step 5 Preview Free、Cat Jam Free 在 Go 内不限次数（∞，限时）",
   "how_to_get": [
    "登录 OpenCode Console 订阅 Go 并复制 API Key",
    "TUI 中 /connect 选 OpenCode Go",
