@@ -35,9 +35,9 @@
 ## v2 新增
 - 分类（共四类，页面按此顺序分组与筛选）：
   - `api`（API）：模型厂商/云平台官方的免费 API 额度
-  - `app`（应用）：在客户端、IDE、编程工具（如 OpenCode、WorkBuddy、Qoder）里免费用的模型
+  - `app`（应用）：在客户端、IDE、编程工具（如 WorkBuddy、Qoder）里免费用的模型
   - `discount`（折扣）：高性价比付费套餐/包月/限时折扣，`free_type` 一般为 `包月`；只收明显高性价比的
-  - `relay`（中转站优惠）：第三方中转/聚合平台（如 OpenRouter、OpenCSG）的注册赠额与免费模型；邀请链接须在 `usage_notes` 注明
+  - `relay`（中转站优惠）：第三方中转/聚合平台（如 OpenRouter、OpenCode Zen、OpenCSG）的注册赠额与免费模型；邀请链接须在 `usage_notes` 注明
 - `model_released`：模型发布日期（`YYYY-MM-DD` 或 `null`），`model_released_note` 说明出处（如“百炼上架日期”）。
 - 默认排序：按 `model_released` 从新到旧。**“比较老”规则**：发布日期距今超过 183 天（约 6 个月）的条目自动打“比较老”标签并排到同类后面；已过期的排最后。7 天内到期仍高亮。
 - 主题：浅色 / 深色，默认跟随系统，手动切换后记在 localStorage。

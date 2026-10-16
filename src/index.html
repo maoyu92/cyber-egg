@@ -39,7 +39,7 @@ const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 const link=u=>/^https?:/.test(u)?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`:esc(u);
 function days(o){if(!o.end)return null;return Math.floor((new Date(o.end+'T23:59:59+08:00')-Date.now())/864e5)}
 let cat='all',sort='rel';
-const OLD_DAYS=183;const SEC={api:['API','模型官方免费额度，直接拿 Key 调用'],app:['应用','在客户端/IDE/编程工具里免费用'],discount:['折扣','只收高性价比的付费套餐/限时折扣；注意大多仍有 5 小时/周/月上限'],relay:['中转站优惠','第三方中转/聚合平台的注册赠额与免费模型']};
+const OLD_DAYS=183;const SEC={api:['API','模型官方免费额度，直接拿 Key 调用'],app:['应用','在客户端/IDE 里免费用'],discount:['折扣','只收高性价比的付费套餐/限时折扣；注意大多仍有 5 小时/周/月上限'],relay:['中转站优惠','第三方中转/聚合平台的注册赠额与免费模型']};
 const age=o=>o.model_released?(Date.now()-new Date(o.model_released))/864e5:null;
 const isOld=o=>{const a=age(o);return a!==null&&a>OLD_DAYS};
 function cmp(a,b){if(sort==='name')return a.name.localeCompare(b.name,'zh');
