@@ -11,14 +11,14 @@
 1. Fork 后修改 `data/offers.json`，**必须附官方来源链接**，写上 `verified_at`。
 2. 不确定的字段写 `待核实`，不要猜数字。
 3. 提 PR，维护者核实后合并，Pages 自动重新部署。
-4. 收录标准：包月类只收明显高性价比的（如低价大额度、限时大折扣），普通会员/订阅不收。
+4. 收录标准：折扣类（付费套餐/包月）只收明显高性价比的（如低价大额度、限时大折扣），普通会员/订阅不收。
 
 ## 数据字段
 | 字段 | 说明 |
 |---|---|
 | id | 唯一短 ID |
 | name / provider | 名称 / 提供方 |
-| category | `api` 或 `app` |
+| category | `api` / `app` / `discount` / `relay` |
 | models | 模型 ID 列表 |
 | free_type | `限时` / `永久额度` / `每日额度` |
 | start / end | `YYYY-MM-DD`（北京时间），未知填 `null` |
@@ -33,7 +33,11 @@
 | status | `active` / `ended` |
 
 ## v2 新增
-- 分类：`api`（API 形式）/ `app`（应用类）/ `plan`（包月/不限量·高性价比，排在最后）。`plan` 的 `free_type` 为 `包月`。
+- 分类（共四类，页面按此顺序分组与筛选）：
+  - `api`（API）：模型厂商/云平台官方的免费 API 额度
+  - `app`（应用）：在客户端、IDE、编程工具（如 OpenCode、WorkBuddy、Qoder）里免费用的模型
+  - `discount`（折扣）：高性价比付费套餐/包月/限时折扣，`free_type` 一般为 `包月`；只收明显高性价比的
+  - `relay`（中转站优惠）：第三方中转/聚合平台（如 OpenRouter、OpenCSG）的注册赠额与免费模型；邀请链接须在 `usage_notes` 注明
 - `model_released`：模型发布日期（`YYYY-MM-DD` 或 `null`），`model_released_note` 说明出处（如“百炼上架日期”）。
 - 默认排序：按 `model_released` 从新到旧。**“比较老”规则**：发布日期距今超过 183 天（约 6 个月）的条目自动打“比较老”标签并排到同类后面；已过期的排最后。7 天内到期仍高亮。
 - 主题：浅色 / 深色，默认跟随系统，手动切换后记在 localStorage。

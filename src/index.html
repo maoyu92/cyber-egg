@@ -15,7 +15,7 @@ header h1{margin:8px 0 4px;font-size:30px}header h1 span{color:var(--warm)}heade
 .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px}
 .card.soon{border-color:var(--warm);box-shadow:0 0 0 1px var(--warm) inset}.card.expired{opacity:.45;filter:grayscale(1)}
 .top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.name{font-size:17px;font-weight:700}.prov{color:var(--mut);font-size:13px}
-.badge{font-size:12px;padding:2px 8px;border-radius:6px;white-space:nowrap}.api{background:var(--apiBg);color:var(--apiTx)}.app{background:var(--appBg);color:var(--appTx)}.plan{background:var(--planBg);color:var(--planTx)}.tag.old{background:var(--oldBg);color:var(--oldTx);border-color:transparent}
+.badge{font-size:12px;padding:2px 8px;border-radius:6px;white-space:nowrap}.api{background:var(--apiBg);color:var(--apiTx)}.app{background:var(--appBg);color:var(--appTx)}.discount{background:var(--planBg);color:var(--planTx)}.relay{background:var(--oldBg);color:var(--oldTx)}.tag.old{background:var(--oldBg);color:var(--oldTx);border-color:transparent}
 .otype{font-size:12px;padding:1px 7px;border-radius:6px;font-weight:600;border:1px solid}.ot-free{color:var(--ok)}.ot-off{color:var(--blue)}.ot-lim{color:var(--warm)}.cd{font-weight:700}.cd.soon{color:var(--warm)}.cd.exp{color:var(--red)}.cd.open{color:var(--ok)}
 .quota{color:var(--q);font-size:14px}.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:6px;padding:1px 7px}
 details{border-top:1px dashed var(--line);padding-top:8px;margin-top:auto}summary{cursor:pointer;color:var(--warm);font-weight:600}
@@ -27,10 +27,10 @@ section.box{background:var(--card);border:1px solid var(--line);border-radius:14
 <header><button id="theme" aria-label="切换主题"></button><div class="mut">🥚 cyber-egg</div><h1>赛博<span>鸡蛋</span></h1>
 <p>多方收集 AI 圈的<strong>免费 Token、优惠折扣和限时优惠</strong>：免费到哪天、额度多少、怎么领取。</p>
 <p class="mut">默认按模型发布时间从新到旧排；发布超过 6 个月的模型标“比较老”并排到后面。7 天内到期的卡片会高亮。每条都标了来源和核实时间，“待核实”表示官方没写清楚或还没确认。免费政策变得很快，用之前请再看一眼官方页面。</p></header>
-<div class="bar"><button class="tab on" data-c="all">全部</button><button class="tab" data-c="api">API 形式</button><button class="tab" data-c="app">应用类</button><button class="tab" data-c="plan">包月/不限量·高性价比</button>
+<div class="bar"><button class="tab on" data-c="all">全部</button><button class="tab" data-c="api">API</button><button class="tab" data-c="app">应用</button><button class="tab" data-c="discount">折扣</button><button class="tab" data-c="relay">中转站优惠</button>
 <select id="sort"><option value="rel">按发布时间（新→旧）</option><option value="end">按到期时间（快到期在前）</option><option value="name">按名称</option></select></div>
 <div id="grid"></div>
-<section class="box" id="submit"><h2>📮 提交线索</h2><p>发现新的免费模型、折扣或限时优惠？欢迎到 GitHub 仓库提 PR 修改 <code>data/offers.json</code>，或提 Issue。包月类只收明显高性价比的（如低价大额度、限时大折扣）。</p><p class="mut">匿名提交表单筹备中（计划用 Cloudflare Worker + D1，人工审核后入库）。</p></section>
+<section class="box" id="submit"><h2>📮 提交线索</h2><p>发现新的免费模型、折扣或限时优惠？欢迎到 GitHub 仓库提 PR 修改 <code>data/offers.json</code>，或提 Issue。折扣类只收明显高性价比的（如低价大额度、限时大折扣）。</p><p class="mut">匿名提交表单筹备中（计划用 Cloudflare Worker + D1，人工审核后入库）。</p></section>
 <section class="box" id="comments"><h2>💬 评论区</h2><p class="mut">计划接入 Giscus（基于 GitHub Discussions），暂未开放。</p></section>
 <footer><div id="visits" class="visits">👀 统计加载中…</div>数据最后构建：__BUILT__ · 时间均为北京时间 · 本站不保证信息实时准确</footer></div>
 <script>
@@ -39,7 +39,7 @@ const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 const link=u=>/^https?:/.test(u)?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`:esc(u);
 function days(o){if(!o.end)return null;return Math.floor((new Date(o.end+'T23:59:59+08:00')-Date.now())/864e5)}
 let cat='all',sort='rel';
-const OLD_DAYS=183;const SEC={api:['API 形式','直接拿 Key 调用'],app:['应用类','在客户端/IDE 里免费用'],plan:['包月/不限量·高性价比','低价订阅，额度很大；注意大多仍有 5 小时/周/月上限']};
+const OLD_DAYS=183;const SEC={api:['API','模型官方免费额度，直接拿 Key 调用'],app:['应用','在客户端/IDE/编程工具里免费用'],discount:['折扣','只收高性价比的付费套餐/限时折扣；注意大多仍有 5 小时/周/月上限'],relay:['中转站优惠','第三方中转/聚合平台的注册赠额与免费模型']};
 const age=o=>o.model_released?(Date.now()-new Date(o.model_released))/864e5:null;
 const isOld=o=>{const a=age(o);return a!==null&&a>OLD_DAYS};
 function cmp(a,b){if(sort==='name')return a.name.localeCompare(b.name,'zh');
@@ -49,12 +49,12 @@ function cmp(a,b){if(sort==='name')return a.name.localeCompare(b.name,'zh');
 function card(o){const d=o.status==='ended'&&(days(o)===null||days(o)>=0)?-1:days(o);let cls='',cd;
   if(d===null)cd=`<span class="cd open">${o.free_type==='限时'?'限时 · 截止日期未公布':esc(o.free_type)}</span>`;
   else if(d<0){cls='expired';cd=`<span class="cd exp">已于 ${o.end} 结束</span>`}
-  else{if(d<=7)cls='soon';cd=`<span class="cd ${d<=7?'soon':''}">${o.category==='plan'?'优惠至':'免费至'} ${o.end} · ${d===0?'今天结束':'还剩 '+d+' 天'}</span>`}
+  else{if(d<=7)cls='soon';cd=`<span class="cd ${d<=7?'soon':''}">${o.category==='discount'?'优惠至':'免费至'} ${o.end} · ${d===0?'今天结束':'还剩 '+d+' 天'}</span>`}
   const u=o.urls||{};const names={official:'官网',docs:'文档',signup:'注册/获取',github:'GitHub',pricing:'价格',announcement:'官方公告'};
   const rel=o.model_released?`模型发布 ${o.model_released}`:'发布时间：'+(o.model_released_note||'待核实');
-  const ot=(o.free_type==='包月'?[['折扣','off']]:[['免费','free']]).concat(o.free_type==='限时'?[['限时','lim']]:[]).map(([t,c])=>`<span class="otype ot-${c}">${t}</span>`);
+  const ot=(o.category==='discount'?[['折扣','off']]:[['免费','free']]).concat(o.free_type==='限时'?[['限时','lim']]:[]).map(([t,c])=>`<span class="otype ot-${c}">${t}</span>`);
   const tags=ot.concat(isOld(o)?['<span class="tag old">比较老</span>']:[]).concat((o.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`)).join('');
-  const lab={api:'API',app:'应用',plan:'包月'}[o.category];
+  const lab={api:'API',app:'应用',discount:'折扣',relay:'中转站'}[o.category];
   return `<article class="card ${cls}"><div class="top"><div><div class="name">${esc(o.name)}</div><div class="prov">${esc(o.provider)}</div></div><span class="badge ${o.category}">${lab}</span></div>
   <div>${cd}</div><div class="quota">${esc(o.quota)}</div><div class="mut">${esc(o.summary)}</div><div class="mut">🗓 ${esc(rel)}</div><div class="tags">${tags}</div>
   <details><summary>详情</summary><dl>
@@ -65,7 +65,7 @@ function card(o){const d=o.status==='ended'&&(days(o)===null||days(o)>=0)?-1:day
   ${o.base_url?`<dt>Base URL / 兼容</dt><dd><code>${esc(o.base_url)}</code><br>${esc(o.compat)}</dd>`:''}
   <dt>额度与限制</dt><dd>${esc(o.limits)}</dd><dt>类型 / 时间</dt><dd>${esc(o.free_type)}：${o.start||'—'} → ${o.end||'未公布'}</dd>
   <dt>备注</dt><dd>${esc(o.usage_notes)}</dd><dt>来源</dt><dd>${o.sources.map(link).join('<br>')}</dd><dt>核实时间</dt><dd>${esc(o.verified_at)}</dd></dl></details></article>`}
-function render(){const cats=cat==='all'?['api','app','plan']:[cat];
+function render(){const cats=cat==='all'?['api','app','discount','relay']:[cat];
  grid.innerHTML=cats.map(c=>{const l=OFFERS.filter(o=>o.category===c).sort(cmp);return `<h2 class="sec">${SEC[c][0]}<small>${SEC[c][1]} · ${l.length} 条</small></h2><div class="grid">${l.map(card).join('')}</div>`}).join('')}
 const th=document.getElementById('theme');function lbl(){th.textContent=document.documentElement.dataset.theme==='light'?'🌙 深色':'☀️ 浅色'}lbl();
 th.onclick=()=>{const n=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=n;localStorage.setItem('theme',n);lbl()};

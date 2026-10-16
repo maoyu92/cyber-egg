@@ -4,6 +4,8 @@ const offers = JSON.parse(fs.readFileSync(new URL('../data/offers.json', import.
 const arg = process.argv.find(a => a.startsWith('--today='));
 const today = arg ? new Date(arg.slice(8) + 'T00:00:00+08:00') : new Date();
 let flagged = 0;
+const CATS = ['api', 'app', 'discount', 'relay'];
+for (const o of offers) if (!CATS.includes(o.category)) { console.log(`❌ 分类无效 ${o.name}（${o.category}），应为 ${CATS.join('/')}`); flagged++; }
 for (const o of offers) {
   if (!o.end || o.status === 'ended') continue;
   const days = Math.floor((new Date(o.end + 'T23:59:59+08:00') - today) / 864e5);

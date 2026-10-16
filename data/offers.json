@@ -1,7 +1,7 @@
 [
  {
   "provider": "OpenCode Zen",
-  "category": "api",
+  "category": "app",
   "free_type": "限时",
   "start": null,
   "end": null,
@@ -43,7 +43,7 @@
  },
  {
   "provider": "OpenCode Go / Zen",
-  "category": "api",
+  "category": "app",
   "free_type": "限时",
   "start": null,
   "end": null,
@@ -84,7 +84,7 @@
  },
  {
   "provider": "OpenCode Go / Zen",
-  "category": "api",
+  "category": "app",
   "free_type": "限时",
   "start": null,
   "end": null,
@@ -126,7 +126,7 @@
  },
  {
   "provider": "OpenCode Go / Zen",
-  "category": "api",
+  "category": "app",
   "free_type": "限时",
   "start": null,
   "end": null,
@@ -260,7 +260,7 @@
   "id": "opencode-zen-free",
   "name": "OpenCode Zen 免费模型",
   "provider": "OpenCode (anoma.ly)",
-  "category": "api",
+  "category": "app",
   "models": [
    "deepseek-v4.1-flash-free",
    "step-5-preview-free",
@@ -316,7 +316,7 @@
   "id": "openrouter-free",
   "name": "OpenRouter :free 模型",
   "provider": "OpenRouter",
-  "category": "api",
+  "category": "relay",
   "models": [
    "nvidia/nemotron-3-ultra-550b-a55b:free",
    "nvidia/nemotron-3-super-120b-a12b:free",
@@ -759,7 +759,7 @@
   "id": "opencode-go",
   "name": "OpenCode Go",
   "provider": "OpenCode",
-  "category": "plan",
+  "category": "discount",
   "models": [
    "GLM-5.3 / 5.3-Flash",
    "Kimi K3 / K2.7 Code",
@@ -790,7 +790,7 @@
  },
  {
   "provider": "OpenCSG 开放传神（AI Gateway 中转）",
-  "category": "api",
+  "category": "relay",
   "free_type": "注册赠额",
   "start": null,
   "end": null,
