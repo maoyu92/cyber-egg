@@ -479,14 +479,15 @@
   "base_url": null,
   "compat": null,
   "limits": "待核实（高峰期可能有并发/排队限制）",
-  "usage_notes": "仅限 WorkBuddy 内使用，不是 API 额度。10-12 至 10-25 的活动期来自阶跃星辰公众号公告（经 allagent.wiki 转述）和新浪科技报道；我没找到腾讯或阶跃可直接打开的官方网页，截止日仍标待核实。",
+  "usage_notes": "仅限 WorkBuddy 内使用，不是 API 额度。10-12 至 10-25 的活动期来自阶跃星辰公告（界面新闻、新浪科技转述）；10-18 复查未见延期消息，25 日之后是否收费官方未说明。我没找到腾讯或阶跃可直接打开的官方网页，截止日仍以转述为准。",
   "sources": [
+   "https://m.jiemian.com/article/15179593.html",
    "https://finance.sina.com.cn/jjxw/2026-10-13/doc-inivasei8834603.shtml",
    "https://www.uied.cn/posts/922036",
    "https://help.aliyun.com/zh/model-studio/newly-released-models",
    "https://www.allagent.wiki/blog/ai-freebies-20261013/"
   ],
-  "verified_at": "2026-10-13",
+  "verified_at": "2026-10-18",
   "status": "active",
   "model_released": "2026-09-21",
   "model_released_note": "Step 5 Preview 在阿里云百炼的上架日期；阶跃官方发布日待核实"
