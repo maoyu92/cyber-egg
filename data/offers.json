@@ -19,9 +19,9 @@
   "sources": [
    "https://opencode.ai/docs/zen/",
    "https://opencode.ai/inference/v1/models",
-   "https://models.dev/api.json"
+   "https://api-docs.deepseek.com/zh-cn/updates"
   ],
-  "verified_at": "2026-10-15",
+  "verified_at": "2026-10-18",
   "status": "active",
   "model_released": "2026-09-10",
   "id": "opencode-deepseek-v4.1-flash-free",
@@ -35,7 +35,7 @@
    "200K上下文",
    "零留存"
   ],
-  "summary": "DeepSeek V4.1 Flash 的免费版（200K 上下文，付费版为 1M），OpenCode Zen 限时免费",
+  "summary": "DeepSeek V4.1 Flash 免费版（200K 上下文）；官方 API 已于 10-17 切到 1017，Zen 免费端点是否同步以实测为准",
   "quota": "输入/输出/缓存读均 Free；官方只写“限时”，截止日期未公布",
   "limits": "上下文 200K、最大输出 32K（models.dev）；付费版 deepseek-v4.1-flash 为 1M/384K。官方未公布免费版速率上限（待核实）。截至 2026-10-15 不在 OpenCode Go 模型列表中",
   "usage_notes": "官方：供应商零留存、不用于训练。",
@@ -87,7 +87,7 @@
   "category": "relay",
   "free_type": "限时",
   "start": null,
-  "end": null,
+  "end": "2026-10-18",
   "how_to_get": [
    "Zen：Console 登录拿 API Key，/connect 选 OpenCode；或订阅 OpenCode Go 后 /connect 选 OpenCode Go",
    "/models 选对应 *-free 模型，或直接调 chat/completions"
@@ -104,8 +104,8 @@
    "https://opencode.ai/docs/zen/",
    "https://opencode.ai/zen/go/v1/models（Go Key 查询 2026-10-15）"
   ],
-  "verified_at": "2026-10-15",
-  "status": "active",
+  "verified_at": "2026-10-18",
+  "status": "ended",
   "model_released": null,
   "id": "opencode-step-5-free",
   "name": "Step 5 Preview Free",
@@ -119,9 +119,9 @@
    "零留存"
   ],
   "summary": "阶跃 Step 5 预览版，OpenCode 限时免费，Go 内不限次数",
-  "quota": "输入/输出/缓存读均 Free；OpenCode Go 内每 5 小时/周/月请求数 Unlimited（∞）；官方仅写“限时”，截止日期未公布",
+  "quota": "2026-10-18 Zen /inference/v1/models 已无 step-5-preview-free；视为下架（确切下架日未知）",
   "limits": "Go 文档请求数表：5 小时 / 每周 / 每月均 Unlimited；Zen 按量通道无单独速率说明（待核实）；上下文长度待核实",
-  "usage_notes": "官方：供应商零留存、不用于训练。另见 WorkBuddy × Step 5 Preview 条目。",
+  "usage_notes": "WorkBuddy × Step 5 Preview（客户端限免至 10-25）是另一条，不受影响。",
   "model_released_note": "OpenCode 上线日期待核实"
  },
  {
@@ -129,7 +129,7 @@
   "category": "relay",
   "free_type": "限时",
   "start": null,
-  "end": null,
+  "end": "2026-10-18",
   "how_to_get": [
    "Zen：Console 登录拿 API Key，/connect 选 OpenCode；或订阅 OpenCode Go 后 /connect 选 OpenCode Go",
    "/models 选对应 *-free 模型，或直接调 chat/completions"
@@ -146,8 +146,8 @@
    "https://opencode.ai/docs/zen/",
    "https://opencode.ai/zen/go/v1/models（Go Key 查询 2026-10-15）"
   ],
-  "verified_at": "2026-10-15",
-  "status": "active",
+  "verified_at": "2026-10-18",
+  "status": "ended",
   "model_released": null,
   "id": "opencode-cat-jam-free",
   "name": "Cat Jam Free",
@@ -161,7 +161,7 @@
    "有地区限制"
   ],
   "summary": "OpenCode 上的隐身（stealth）模型，限时免费，Go 内不限次数；背后厂商未公开",
-  "quota": "输入/输出/缓存读均 Free；OpenCode Go 内每 5 小时/周/月请求数 Unlimited（∞）；官方仅写“限时”，截止日期未公布",
+  "quota": "2026-10-18 Zen /inference/v1/models 已无 cat-jam-free；视为下架（确切下架日未知）",
   "limits": "Go 文档请求数表：5 小时 / 每周 / 每月均 Unlimited；Zen 按量通道无单独速率说明（待核实）；上下文长度待核实",
   "usage_notes": "⚠️ 不对中国大陆（含港澳）、俄罗斯、伊朗等地区开放。数据不用于训练，但出于安全保留 30 天。真实模型/厂商未公开（待核实）。",
   "model_released_note": "隐身模型，发布时间待核实"
@@ -207,7 +207,7 @@
    "https://maas.unisound.com/docs/price/overview",
    "https://www.unisound.com/research/158"
   ],
-  "verified_at": "2026-10-13",
+  "verified_at": "2026-10-18",
   "status": "active",
   "model_released": "2026-09-15",
   "model_released_note": "云知声官方发布"
@@ -263,26 +263,20 @@
   "category": "relay",
   "models": [
    "deepseek-v4.1-flash-free",
-   "step-5-preview-free",
+   "glm-5.3-flash-free",
    "longcat-2.5-preview-free",
    "mimo-v2.6-flash-free",
-   "mimo-v2.5-free",
-   "ling-3.1-flash-free",
-   "ling-3.0-flash-fin-free",
-   "nemotron-3-ultra-free",
    "nemotron-3.5-lightning-free",
-   "exo-free",
+   "nemotron-3.5-super-vl-free",
+   "beam-free",
    "space-bunny-free",
-   "cat-jam-free",
-   "big-pickle",
-   "muse-spark-1.3-contributor-free",
    "jev-1.13-free"
   ],
   "free_type": "限时",
   "start": null,
   "end": null,
   "quota": "带 -free 后缀的模型输入/输出均 Free；官方只写“限时”，无截止日期",
-  "summary": "十多个限时免费模型，OpenCode 里直接选，也可 API 调用",
+  "summary": "Zen 限时免费模型（2026-10-18 接口实测 9 个 *-free）；名单经常变",
   "tags": [
    "Coding",
    "OpenAI兼容",
@@ -302,12 +296,12 @@
   "base_url": "https://opencode.ai/inference/v1",
   "compat": "OpenAI 兼容（chat/completions）；Jev 为 /systemone",
   "limits": "官方未公布免费模型的次数/速率上限（待核实）",
-  "usage_notes": "隐私：Big Pickle、Exo、MiMo 等免费期数据可能用于改进模型；Nemotron 免费端点会记录日志；Muse Spark Contributor 以数据换训练；Cat Jam Free 不用于训练但保留 30 天，且不对中国大陆/港澳开放。Step 5 Preview / LongCat 2.5 Preview / Space Bunny 为零留存。",
+  "usage_notes": "2026-10-18 GET /inference/v1/models：step-5-preview-free、cat-jam-free 已不在列表。新增 glm-5.3-flash-free、beam-free、nemotron-3.5-super-vl-free。隐私策略因模型而异，以官方 Zen 文档为准。",
   "sources": [
    "https://opencode.ai/docs/zen/",
    "https://opencode.ai/inference/v1/models"
   ],
-  "verified_at": "2026-10-15",
+  "verified_at": "2026-10-18",
   "status": "active",
   "model_released": null,
   "model_released_note": "多个模型，各自发布时间不同"
@@ -318,18 +312,27 @@
   "provider": "OpenRouter",
   "category": "relay",
   "models": [
+   "poolside/laguna-s-2.1:free",
+   "poolside/laguna-xs-2.1:free",
+   "cohere/north-mini-code:free",
+   "dots-studio/dots-3-note-preview:free",
+   "google/gemma-4-31b-it:free",
+   "google/gemma-4-26b-a4b-it:free",
    "nvidia/nemotron-3-ultra-550b-a55b:free",
    "nvidia/nemotron-3-super-120b-a12b:free",
-   "google/gemma-4-31b-it:free",
+   "nvidia/nemotron-3.5-lightning:free",
+   "nvidia/nemotron-3.5-super-vl:free",
+   "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
    "thinkingmachines/inkling:free",
-   "poolside/laguna-s-2.1:free",
-   "cohere/north-mini-code:free"
+   "thinkingmachines/inkling-small:free",
+   "liquid/lfm-2.5-2.6b:free",
+   "xingchen-agi/xing4.0-29b-a4b:free"
   ],
   "free_type": "每日额度",
   "start": null,
   "end": null,
   "quota": "20 次/分钟；累计充值 <10 credits 每天 50 次，≥10 credits 每天 1000 次",
-  "summary": "模型 ID 以 :free 结尾即免费，2026-10-13 共 15 个",
+  "summary": "模型 ID 以 :free 结尾即免费；2026-10-18 实测文本类约 15+ 个（另有 Lyria 音频预览未列入）",
   "tags": [
    "OpenAI兼容",
    "多模型",
@@ -349,12 +352,12 @@
   "base_url": "https://openrouter.ai/api/v1",
   "compat": "OpenAI 兼容",
   "limits": "免费模型 20 RPM；每日 50 / 1000 次（UTC 0 点重置）；账户余额为负时免费模型也会 402",
-  "usage_notes": "2026-10-13 的 15 个免费模型：apodex-1.1-mini、dots-3-note-preview、lfm-2.5-2.6b、nemotron-3.5-lightning、inkling-small、laguna-s-2.1、inkling、laguna-xs-2.1、north-mini-code、nemotron-3.5-content-safety、nemotron-3-ultra-550b、nemotron-3-nano-omni-30b、gemma-4-26b-a4b、gemma-4-31b、nemotron-3-super-120b。列表经常变。",
+  "usage_notes": "2026-10-18 新增 xingchen-agi/xing4.0-29b-a4b:free、nemotron-3.5-super-vl:free 等。列表经常变。额度：20 RPM；累计充值 <10 credits 每天 50 次，≥10 每天 1000 次。",
   "sources": [
    "https://openrouter.ai/api/v1/models",
    "https://openrouter.ai/docs/api/reference/limits"
   ],
-  "verified_at": "2026-10-13",
+  "verified_at": "2026-10-18",
   "status": "active",
   "model_released": null,
   "model_released_note": "多个模型，各自发布时间不同"
@@ -524,13 +527,13 @@
   "base_url": null,
   "compat": null,
   "limits": "企业订阅（团队版/企业版）不适用；仅限 Qoder 产品内",
-  "usage_notes": "原定 9-30 结束，已延长，10-1 起继续免费，结束时间将提前在活动页公告。",
+  "usage_notes": "官方活动页 10-18 仍写：已延期，结束时间将提前在本页公告。企业订阅不适用。",
   "sources": [
    "https://docs.qoder.cn/events/flashoffer",
    "https://docs.qoder.com/zh/events/flashoffer",
    "https://help.aliyun.com/zh/model-studio/newly-released-models"
   ],
-  "verified_at": "2026-10-13",
+  "verified_at": "2026-10-18",
   "status": "active",
   "model_released": "2026-08-26",
   "model_released_note": "Qwen3.8-Flash 在阿里云百炼的上架日期"
@@ -546,19 +549,20 @@
    "多模态"
   ],
   "status": "active",
-  "verified_at": "2026-10-13",
+  "verified_at": "2026-10-18",
   "model_released": "2026-09-10",
   "model_released_note": "DeepSeek 官方更新日志",
   "id": "workbuddy-intl-deepseek-v41-flash",
-  "name": "WorkBuddy 国际版 × DeepSeek V4.1 Flash",
+  "name": "WorkBuddy 国际版 × DeepSeek V4.1 Flash-1017",
   "provider": "腾讯 WorkBuddy（国际版 workbuddy.ai）",
   "category": "app",
   "models": [
+   "DeepSeek-V4.1-Flash-1017",
    "DeepSeek-V4.1-Flash"
   ],
   "free_type": "限时",
-  "quota": "活动期免费使用（官方推文未写额度；第三方称倍率 0、不扣积分，待核实）",
-  "summary": "WorkBuddy 官方 X 账号 10-12 宣布免费延长到 10 月 31 日；仅国际版",
+  "quota": "活动期免费（官方推文未写额度；第三方称倍率 0、约有频率上限，待核实）",
+  "summary": "国际版已同步 DeepSeek-V4.1-Flash-1017，官方 X 宣布免费至 10 月 31 日",
   "how_to_get": [
    "到 workbuddy.ai 下载国际版客户端并注册（与国内版 workbuddy.cn 账号不通）",
    "模型列表选 DeepSeek-V4.1-Flash"
@@ -568,10 +572,10 @@
    "announcement": "https://x.com/WorkBuddy_AI/status/2109673559710974130"
   },
   "limits": "待核实（第三方称账户积分清零后免费模型也无法调用）",
-  "usage_notes": "原定 10-9 结束（官方 9-23 推文），后延长至 10-31。国内版同模型据第三方是 0.03× 优惠、不是免费（待核实）。开始日 9-11 来自第三方。",
+  "usage_notes": "10-12 官方延期至 10-31；10-17 官方宣布已更新到 V4.1-Flash-1017 且仍免费到 10-31。仅国际版 workbuddy.ai。国内版同模型据第三方是优惠倍率而非免费（待核实）。账户积分清零后免费模型也可能不可用（第三方，待核实）。",
   "sources": [
+   "https://x.com/WorkBuddy_AI/status/2111404103402430558",
    "https://x.com/WorkBuddy_AI/status/2109673559710974130",
-   "https://x.com/WorkBuddy_AI/status/2102611673962213506",
    "https://api-docs.deepseek.com/zh-cn/updates"
   ]
  },
@@ -833,5 +837,128 @@
   "limits": "赠额有效期、是否需实名、速率上限官方均未公布。按上述价格，99 元粗算约可用 1100 万输出 token",
   "usage_notes": "透明说明：注册链接为站长个人邀请链接（invitationCode=EE5AHDFRCY），通过它注册站长可能获得邀请奖励。",
   "model_released_note": "中转平台条目，不对应单一模型发布日期"
+ },
+ {
+  "id": "deepseek-search-fetch-agent-free",
+  "name": "DeepSeek Search/Fetch（Agent 路径限免）",
+  "provider": "DeepSeek",
+  "category": "api",
+  "models": [
+   "Search",
+   "Fetch"
+  ],
+  "free_type": "限时",
+  "start": "2026-10-17",
+  "end": "2026-11-01",
+  "quota": "经 DeepSeek Harness / Claude Code / Codex 使用 DeepSeek API 时，服务端工具触发的 Search/Fetch 在北京时间 2026-11-01 00:00 前不计费；直接调 Search/Fetch API 仍 ¥5/千次",
+  "summary": "自研网页搜索与抓取，跟 Coding Agent 绑定时限时免费",
+  "tags": [
+   "搜索",
+   "Agent",
+   "限时"
+  ],
+  "how_to_get": [
+   "使用 DeepSeek Harness（建议 ≥0.2.1-rc.1）、Claude Code 或 Codex，并配置 DeepSeek API",
+   "模型填 deepseek-flash；在工具/网页搜索设置中启用 Search 或 Fetch",
+   "不要指望直接 curl Search/Fetch 接口免费——那条路径一直按次计费"
+  ],
+  "urls": {
+   "official": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+   "docs": "https://api-docs.deepseek.com/zh-cn/guides/search_and_fetch",
+   "signup": "https://platform.deepseek.com/"
+  },
+  "base_url": "https://api.deepseek.com",
+  "compat": "随 Harness / Claude Code / Codex 工具协议",
+  "limits": "直接 API：¥5/千次成功请求；空结果/失败/超时不计费（以官方指南为准）",
+  "usage_notes": "模型调用本身仍按 deepseek-flash 正常计费；本条只覆盖 Search/Fetch 工具费。截止时刻：北京时间 2026-11-01 00:00。",
+  "sources": [
+   "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+   "https://api-docs.deepseek.com/quick_start/pricing/",
+   "https://api-docs.deepseek.com/zh-cn/updates"
+  ],
+  "verified_at": "2026-10-18",
+  "status": "active",
+  "model_released": "2026-10-17",
+  "model_released_note": "Search/Fetch 与 V4.1-Flash-1017 同日开放"
+ },
+ {
+  "id": "opencode-glm-5.3-flash-free",
+  "name": "GLM-5.3 Flash Free",
+  "provider": "OpenCode Zen",
+  "category": "relay",
+  "models": [
+   "glm-5.3-flash-free"
+  ],
+  "free_type": "限时",
+  "start": null,
+  "end": null,
+  "quota": "输入/输出均 Free（接口 id 带 -free）；官方截止日期未公布",
+  "summary": "智谱 GLM-5.3 Flash 在 OpenCode Zen 的限时免费端点（2026-10-18 实测出现）",
+  "tags": [
+   "Coding",
+   "新",
+   "零留存待核实"
+  ],
+  "how_to_get": [
+   "Console 登录拿 API Key，TUI /connect 选 OpenCode",
+   "/models 选 glm-5.3-flash-free，或 chat/completions 填该 model id"
+  ],
+  "urls": {
+   "official": "https://opencode.ai/docs/zen/",
+   "docs": "https://opencode.ai/docs/zen/",
+   "signup": "https://opencode.ai/auth"
+  },
+  "base_url": "https://opencode.ai/inference/v1",
+  "compat": "OpenAI 兼容（chat/completions）",
+  "limits": "上下文/速率上限待核实",
+  "usage_notes": "隐私与留存策略以 OpenCode Zen 文档为准（待逐模型核实）。",
+  "sources": [
+   "https://opencode.ai/inference/v1/models",
+   "https://opencode.ai/docs/zen/"
+  ],
+  "verified_at": "2026-10-18",
+  "status": "active",
+  "model_released": null,
+  "model_released_note": "Zen 上线日期待核实；今日首次在 free 列表中观察到"
+ },
+ {
+  "id": "opencode-beam-free",
+  "name": "Beam Free",
+  "provider": "OpenCode Zen",
+  "category": "relay",
+  "models": [
+   "beam-free"
+  ],
+  "free_type": "限时",
+  "start": null,
+  "end": null,
+  "quota": "输入/输出均 Free（接口 id 带 -free）；官方截止日期未公布",
+  "summary": "OpenCode Zen 限时免费端点 beam-free（2026-10-18 实测出现）；背后厂商未公开",
+  "tags": [
+   "Coding",
+   "新",
+   "隐身模型"
+  ],
+  "how_to_get": [
+   "Console 登录拿 API Key，TUI /connect 选 OpenCode",
+   "/models 选 beam-free，或 chat/completions 填该 model id"
+  ],
+  "urls": {
+   "official": "https://opencode.ai/docs/zen/",
+   "docs": "https://opencode.ai/docs/zen/",
+   "signup": "https://opencode.ai/auth"
+  },
+  "base_url": "https://opencode.ai/inference/v1",
+  "compat": "OpenAI 兼容（chat/completions）",
+  "limits": "上下文/速率上限待核实；真实模型/厂商未公开",
+  "usage_notes": "隐身（stealth）风格命名；隐私与留存策略、地区限制以 OpenCode Zen 文档为准（待核实）。",
+  "sources": [
+   "https://opencode.ai/inference/v1/models",
+   "https://opencode.ai/docs/zen/"
+  ],
+  "verified_at": "2026-10-18",
+  "status": "active",
+  "model_released": null,
+  "model_released_note": "Zen 上线日期待核实；今日首次在 free 列表中观察到"
  }
 ]
