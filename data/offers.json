@@ -794,51 +794,6 @@
   ]
  },
  {
-  "provider": "OpenCSG 开放传神（AI Gateway 中转）",
-  "category": "relay",
-  "free_type": "注册赠额",
-  "start": null,
-  "end": null,
-  "how_to_get": [
-   "通过邀请链接注册 OpenCSG 账号（本条为站长邀请链接）",
-   "账户设置 → API Keys 创建 gw-sk- 开头的 Key",
-   "OpenAI 兼容方式调用，model 填 deepseek-v4.1-flash"
-  ],
-  "base_url": "https://opencsg.com/aigateway/v1",
-  "compat": "OpenAI 兼容（官方文档：替换 base_url 和 API Key 即可）",
-  "urls": {
-   "official": "https://opencsg.com/",
-   "docs": "https://www.opencsg.com/docs/en/csghub/101/function/profile/api_keys",
-   "signup": "https://opencsg.com/signup?invitationCode=EE5AHDFRCY"
-  },
-  "sources": [
-   "https://opencsg.com/aigateway/v1/models（2026-10-16 查询）",
-   "https://opencsg.com/models/deepseek-ai/DeepSeek-V4.1-Flash",
-   "https://www.opencsg.com/docs/en/csghub/101/function/profile/api_keys"
-  ],
-  "verified_at": "2026-10-16",
-  "status": "active",
-  "model_released": null,
-  "id": "opencsg-signup-credit",
-  "name": "OpenCSG 注册送 99 元",
-  "models": [
-   "deepseek-v4.1-flash",
-   "deepseek-v4-flash",
-   "deepseek-v4-pro"
-  ],
-  "tags": [
-   "中转站",
-   "注册赠额",
-   "邀请链接",
-   "人民币计价"
-  ],
-  "summary": "国内模型社区 OpenCSG 的 AI Gateway，可调 DeepSeek-V4.1-Flash 等 26 个模型；注册送 99 元额度",
-  "quota": "注册赠送 99 元（站长已亲测确认）。DeepSeek-V4.1-Flash 官方价：输入 ¥2.2/百万、缓存 ¥0.22/百万、输出 ¥8.8/百万",
-  "limits": "赠额有效期、是否需实名、速率上限官方均未公布。按上述价格，99 元粗算约可用 1100 万输出 token",
-  "usage_notes": "透明说明：注册链接为站长个人邀请链接（invitationCode=EE5AHDFRCY），通过它注册站长可能获得邀请奖励。",
-  "model_released_note": "中转平台条目，不对应单一模型发布日期"
- },
- {
   "id": "deepseek-search-fetch-agent-free",
   "name": "DeepSeek Search/Fetch（Agent 路径限免）",
   "provider": "DeepSeek",
