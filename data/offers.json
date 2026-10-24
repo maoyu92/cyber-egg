@@ -527,13 +527,13 @@
     "base_url": null,
     "compat": null,
     "limits": "企业订阅（团队版/企业版）不适用；仅限 Qoder 产品内",
-    "usage_notes": "官方活动页 10-18 仍写：已延期，结束时间将提前在本页公告。企业订阅不适用。",
+    "usage_notes": "官方活动页 10-24 复查仍写：已延期，结束时间将提前在本页公告。企业订阅（Teams/Enterprise）不适用。",
     "sources": [
       "https://docs.qoder.cn/events/flashoffer",
       "https://docs.qoder.com/zh/events/flashoffer",
       "https://help.aliyun.com/zh/model-studio/newly-released-models"
     ],
-    "verified_at": "2026-10-18",
+    "verified_at": "2026-10-24",
     "status": "active",
     "model_released": "2026-08-26",
     "model_released_note": "Qwen3.8-Flash 在阿里云百炼的上架日期"
@@ -549,7 +549,7 @@
       "多模态"
     ],
     "status": "active",
-    "verified_at": "2026-10-18",
+    "verified_at": "2026-10-24",
     "model_released": "2026-09-10",
     "model_released_note": "DeepSeek 官方更新日志",
     "id": "workbuddy-intl-deepseek-v41-flash",
@@ -572,7 +572,7 @@
       "announcement": "https://x.com/WorkBuddy_AI/status/2109673559710974130"
     },
     "limits": "待核实（第三方称账户积分清零后免费模型也无法调用）",
-    "usage_notes": "10-12 官方延期至 10-31；10-17 官方宣布已更新到 V4.1-Flash-1017 且仍免费到 10-31。仅国际版 workbuddy.ai。国内版同模型据第三方是优惠倍率而非免费（待核实）。账户积分清零后免费模型也可能不可用（第三方，待核实）。",
+    "usage_notes": "10-12 官方延期至 10-31；10-17 官方宣布已更新到 V4.1-Flash-1017 且仍免费到 10-31。仅国际版 workbuddy.ai。国内版同模型据第三方是优惠倍率而非免费（待核实）。账户积分清零后免费模型也可能不可用（第三方，待核实）。 10-24：模真真 10-23 汇总仍列免费至 10-31（仅日期，未注明时区/小时）；官方 X 推文本次未能直接抓取复核。",
     "sources": [
       "https://x.com/WorkBuddy_AI/status/2111404103402430558",
       "https://x.com/WorkBuddy_AI/status/2109673559710974130",
@@ -915,5 +915,335 @@
     "status": "active",
     "model_released": null,
     "model_released_note": "Zen 上线日期待核实；今日首次在 free 列表中观察到"
+  },
+  {
+    "models": [],
+    "start": null,
+    "end": null,
+    "base_url": null,
+    "compat": null,
+    "tags": [
+      "Coding",
+      "体验卡"
+    ],
+    "limits": "仅限从未订阅过 GLM Coding Plan 的用户",
+    "urls": {
+      "official": "https://bigmodel.cn/activity/trial-card/PU9MTWG0PM"
+    },
+    "sources": [
+      "https://bigmodel.cn/activity/trial-card/PU9MTWG0PM",
+      "https://mozhenzhen.com/news?category=money"
+    ],
+    "verified_at": "2026-10-24",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": null,
+    "id": "zhipu-glm-coding-trial-card",
+    "name": "智谱 GLM Coding Plan 体验卡",
+    "provider": "智谱 BigModel",
+    "category": "app",
+    "free_type": "体验卡",
+    "quota": "2000 积分，领取后 7 天有效（据模真真 10-23 汇总）",
+    "summary": "从未订阅过 GLM Coding Plan 的用户可领体验卡，无需先购买套餐",
+    "how_to_get": [
+      "登录 bigmodel.cn 打开活动页领取体验卡"
+    ],
+    "usage_notes": "待核实：官方活动页为 JS 渲染，10-24 未能抓取正文；额度与资格来自模真真 10-23 汇总。"
+  },
+  {
+    "models": [
+      "Sonus"
+    ],
+    "start": "2026-10-22",
+    "end": "2026-10-30",
+    "base_url": null,
+    "compat": null,
+    "tags": [
+      "Coding",
+      "IDE",
+      "CLI"
+    ],
+    "limits": "Lite 需升级 Pro；不与错峰优惠叠加；申请/领取截止 10-30 23:59（UTC+8）",
+    "urls": {
+      "official": "https://qoder.com/community-boost",
+      "docs": "https://docs.qoder.com/zh/events/communityboost"
+    },
+    "sources": [
+      "https://docs.qoder.com/zh/events/communityboost"
+    ],
+    "verified_at": "2026-10-24",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": null,
+    "id": "qoder-1024-sonus",
+    "name": "Qoder 1024 · 创造力集结（Sonus 见面礼）",
+    "provider": "阿里 Qoder",
+    "category": "app",
+    "free_type": "限时",
+    "quota": "见面礼 1,024 SOTA Credits（用至 10-31 23:59）；全站助力达 2万/5万/10万 再解锁 2048/3072/4096 Credits 补给包（领后 24h 内用）",
+    "summary": "Pro+ 自动加入；Free 用户活动页申请、审核通过后领取；Lite 不支持 Sonus",
+    "how_to_get": [
+      "Free 用户在 qoder.com/community-boost 提交申请（每号一次，可附 Qoder Sites 作品提高通过率）",
+      "审核通过或 Pro+ 用户：客户端 头像→权益中心 / IDE 用量面板 / CLI /claim 领取",
+      "选 Sonus 模型使用"
+    ],
+    "usage_notes": "10-24 官方规则页核实。"
+  },
+  {
+    "models": [
+      "DeepSeek-V4.1-Flash-1017"
+    ],
+    "start": null,
+    "end": "2026-10-24",
+    "base_url": null,
+    "compat": null,
+    "tags": [
+      "Coding",
+      "IDE"
+    ],
+    "limits": null,
+    "urls": {
+      "announcement": "https://x.com/qoder_ai_ide/status/2112211609448071675"
+    },
+    "sources": [
+      "https://x.com/qoder_ai_ide/status/2112211609448071675",
+      "https://mozhenzhen.com/news?category=money"
+    ],
+    "verified_at": "2026-10-24",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": null,
+    "id": "qoder-deepseek-v41-flash-1017",
+    "name": "Qoder × DeepSeek-V4.1-Flash-1017 限免",
+    "provider": "阿里 Qoder",
+    "category": "app",
+    "free_type": "限时",
+    "quota": "活动期免费，免费账户也可用",
+    "summary": "限免至 10-24 23:59（北京时间），今天最后一天",
+    "how_to_get": [
+      "登录 Qoder，模型选择 DeepSeek-V4.1-Flash-1017"
+    ],
+    "usage_notes": "待核实：官方 X 推文 10-24 未能直接抓取；截止时间来自模真真 10-23 汇总。"
+  },
+  {
+    "models": [],
+    "start": null,
+    "end": null,
+    "base_url": null,
+    "compat": null,
+    "tags": [
+      "Agent"
+    ],
+    "limits": null,
+    "urls": {
+      "official": "https://mimo.mi.com/"
+    },
+    "sources": [
+      "https://mimo.mi.com/",
+      "https://mozhenzhen.com/news?category=money"
+    ],
+    "verified_at": "2026-10-24",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": null,
+    "id": "xiaomi-mimo-claw",
+    "name": "小米 MiMo Claw",
+    "provider": "小米 MiMo",
+    "category": "app",
+    "free_type": "每日免费",
+    "quota": "每天 3 小时免费使用，单次会话有计算资源上限",
+    "summary": "小米 MiMo Claw 每日 3 小时免费",
+    "how_to_get": [
+      "打开 mimo.mi.com 登录使用 MiMo Claw"
+    ],
+    "usage_notes": "待核实：10-24 官网首页未见“每天 3 小时”文字（可能需登录后显示），数据来自模真真 10-23 汇总。"
+  },
+  {
+    "models": [
+      "mimo-v2.5-tts",
+      "mimo-v2.5-tts-voiceclone",
+      "mimo-v2.5-tts-voicedesign"
+    ],
+    "start": null,
+    "end": null,
+    "base_url": null,
+    "compat": null,
+    "tags": [
+      "语音",
+      "TTS",
+      "API"
+    ],
+    "limits": "结束时间未公布；不含 ASR 与文本模型",
+    "urls": {
+      "official": "https://mimo.mi.com/",
+      "docs": "https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+    },
+    "sources": [
+      "https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+    ],
+    "verified_at": "2026-10-24",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": null,
+    "id": "xiaomi-mimo-tts-free",
+    "name": "小米 MiMo-V2.5 语音合成 / 声音克隆 / 声音设计 API",
+    "provider": "小米 MiMo 开放平台",
+    "category": "api",
+    "free_type": "限时",
+    "quota": "三款 TTS 接口限时免费（国内/海外均标注）",
+    "summary": "MiMo 开放平台 TTS 三件套限时免费；ASR（mimo-v2.5-asr）与文本模型照常计费",
+    "how_to_get": [
+      "在 MiMo 开放平台创建普通 API Key（按量计费，非 Token Plan）",
+      "调用上述三个模型 ID"
+    ],
+    "usage_notes": "10-24 官方定价页核实（页面更新于 10-21）。注意 mimo-v2.5 / v2.5-pro 文本模型已于 10-21 下线，TTS 不受影响。"
+  },
+  {
+    "models": [
+      "gpt-image-2.5-sunburst"
+    ],
+    "start": null,
+    "end": "2026-11-02",
+    "base_url": null,
+    "compat": null,
+    "tags": [
+      "图像生成"
+    ],
+    "limits": null,
+    "urls": {
+      "official": "https://arena.ai/image/direct?model_a=gpt-image-2.5-sunburst"
+    },
+    "sources": [
+      "https://arena.ai/image/direct?model_a=gpt-image-2.5-sunburst",
+      "https://mozhenzhen.com/news?category=money"
+    ],
+    "verified_at": "2026-10-24",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": null,
+    "id": "arena-gpt-image-25-sunburst",
+    "name": "Arena × GPT-Image-2.5 Sunburst",
+    "provider": "Arena (LMArena)",
+    "category": "app",
+    "free_type": "限时",
+    "quota": "Direct 模式免费直接选该模型画图",
+    "summary": "截止 11-03 00:00（北京时间），即 11-02 当天结束",
+    "how_to_get": [
+      "打开体验入口，Direct 模式选 gpt-image-2.5-sunburst"
+    ],
+    "usage_notes": "部分核实：10-24 入口页可打开（Direct 图像模式），截止时间来自模真真 10-23 汇总，官方页未显示截止。"
+  },
+  {
+    "models": [],
+    "start": null,
+    "end": null,
+    "base_url": null,
+    "compat": null,
+    "tags": [
+      "办公Agent",
+      "教育"
+    ],
+    "limits": "需教师身份审核",
+    "urls": {
+      "announcement": "https://weibo.com/2/detail/5355765661703134",
+      "guide": "https://mozhenzhen.com/news/workbuddy-teachers-monthly-2000-credits-20261022"
+    },
+    "sources": [
+      "https://weibo.com/2/detail/5355765661703134",
+      "https://mozhenzhen.com/news/workbuddy-teachers-monthly-2000-credits-20261022"
+    ],
+    "verified_at": "2026-10-24",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": null,
+    "id": "workbuddy-teachers",
+    "name": "WorkBuddy 教师公益计划",
+    "provider": "腾讯 WorkBuddy",
+    "category": "app",
+    "free_type": "公益计划",
+    "quota": "每月 2000 积分，连续 12 个月，按月发放",
+    "summary": "通过教师身份审核即可申请",
+    "how_to_get": [
+      "按官方公告/申请指引提交教师身份审核"
+    ],
+    "usage_notes": "待核实：官方微博 10-24 抓取 504；数据来自模真真 10-22/10-23。"
+  },
+  {
+    "models": [
+      "ChatGPT Pro",
+      "Codex"
+    ],
+    "start": null,
+    "end": null,
+    "base_url": null,
+    "compat": null,
+    "tags": [
+      "Coding",
+      "开源"
+    ],
+    "limits": "需审核，无统一星标门槛",
+    "urls": {
+      "official": "https://openai.com/zh-Hans-CN/form/codex-for-oss/"
+    },
+    "sources": [
+      "https://openai.com/zh-Hans-CN/form/codex-for-oss/"
+    ],
+    "verified_at": "2026-10-24",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": null,
+    "id": "openai-codex-for-oss",
+    "name": "OpenAI Codex for Open Source",
+    "provider": "OpenAI",
+    "category": "app",
+    "free_type": "申请制",
+    "quota": "入选维护者：6 个月 ChatGPT Pro（含 Codex）+ Codex Security 有条件访问 + API 额度",
+    "summary": "开源项目主要/核心维护者可申请，滚动审核，不保证通过",
+    "how_to_get": [
+      "填写官方表单：GitHub 用户名、公开仓库、为何重要（星标/下载量等）、OpenAI 组织 ID",
+      "滚动审核，入选邮件通知；也可提名他人"
+    ],
+    "usage_notes": "10-24 官方表单页核实。"
+  },
+  {
+    "models": [
+      "GLM-5.3",
+      "GLM-5.3-Flash"
+    ],
+    "start": "2026-10-23",
+    "end": "2026-10-26",
+    "base_url": null,
+    "compat": null,
+    "tags": [
+      "Coding",
+      "客户端"
+    ],
+    "limits": "仅限 ZCode 客户端；不限 Coding Plan 用户；领完即止；10-26 09:00 后作废",
+    "urls": {
+      "official": "https://zcode.z.ai/"
+    },
+    "sources": [
+      "https://zcode.z.ai/",
+      "https://www.uied.cn/posts/922104",
+      "https://www.appinn.com/zcode-1024-free-500-million-tokens/",
+      "https://www.aipromonow.com/promos/zcode-1024-5e8-tokens-glm-5-3-oct26-2026"
+    ],
+    "verified_at": "2026-10-24",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": null,
+    "id": "zcode-1024-500m-tokens",
+    "name": "ZCode 1024 程序员节 · 5 亿 Tokens",
+    "provider": "智谱 ZCode",
+    "category": "app",
+    "free_type": "限时",
+    "quota": "每份 5 亿 Tokens（第三方称 GLM-5.3 2 亿 + GLM-5.3-Flash 3 亿），共 20 万份先到先得",
+    "summary": "10-23 20:00 起端内领取，额度 10-23 23:00 生效、10-26 09:00 到期（北京时间）",
+    "how_to_get": [
+      "zcode.z.ai 下载/更新最新版客户端并登录",
+      "左下角「ZCODE 1024 程序员节 · 5 亿 TOKENS」入口→打开大礼包",
+      "模型设置选 GLM-5.3 / GLM-5.3-Flash"
+    ],
+    "usage_notes": "待核实：官网首页未刊登活动规则（端内弹窗），细节来自 UIED 转载官方文案、小众软件实测、AI Promo Now；2亿/3亿拆分小众软件称截图未显示。"
   }
 ]
