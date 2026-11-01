@@ -8,6 +8,9 @@
 a{color:var(--blue);word-break:break-all}.wrap{max-width:1100px;margin:0 auto;padding:20px 16px 60px}
 header{position:relative}#theme{position:absolute;right:0;top:0;background:var(--card);border:1px solid var(--line);color:var(--txt);border-radius:999px;padding:6px 12px;cursor:pointer;font-size:13px}h2.sec{font-size:18px;margin:26px 0 10px}h2.sec small{color:var(--mut);font-weight:400;font-size:13px;margin-left:6px}
 header h1{margin:8px 0 4px;font-size:30px}header h1 span{color:var(--warm)}header p{color:var(--mut);margin:4px 0}
+.news{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:12px 0 4px;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--txt);font-size:14px}
+.news a.btn{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;white-space:nowrap}
+.news a.btn:hover{filter:brightness(1.05)}.news .lbl{color:var(--mut);flex:1;min-width:200px}
 .bar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 14px;align-items:center}
 .tab{background:var(--card);border:1px solid var(--line);color:var(--txt);padding:7px 14px;border-radius:999px;cursor:pointer;font-size:14px}
 .tab.on{background:var(--blue);border-color:var(--blue)}select{background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:7px;margin-left:auto}
@@ -26,13 +29,14 @@ section.box{background:var(--card);border:1px solid var(--line);border-radius:14
 </style></head><body><div class="wrap">
 <header><button id="theme" aria-label="切换主题"></button><div class="mut">🥚 cyber-egg</div><h1>赛博<span>鸡蛋</span></h1>
 <p>多方收集 AI 圈的<strong>免费 Token、优惠折扣和限时优惠</strong>：免费到哪天、额度多少、怎么领取。</p>
+<p class="news"><a class="btn" href="https://saibodan.com/" target="_blank" rel="noopener">📰 赛博鸡蛋资讯站</a><span class="lbl">每日更新的免费 AI 福利快讯整理在 <a href="https://saibodan.com/" target="_blank" rel="noopener">saibodan.com</a>，可跟着去看；本站仍是结构化清单。</span></p>
 <p class="mut">默认按模型发布时间从新到旧排；发布超过 6 个月的模型标“比较老”并排到后面。7 天内到期的卡片会高亮。每条都标了来源和核实时间，“待核实”表示官方没写清楚或还没确认。免费政策变得很快，用之前请再看一眼官方页面。</p></header>
 <div class="bar"><button class="tab on" data-c="all">全部</button><button class="tab" data-c="api">API</button><button class="tab" data-c="app">应用</button><button class="tab" data-c="discount">折扣</button><button class="tab" data-c="relay">中转站优惠</button>
 <select id="sort"><option value="rel">按发布时间（新→旧）</option><option value="end">按到期时间（快到期在前）</option><option value="name">按名称</option></select></div>
 <div id="grid"></div>
 <section class="box" id="submit"><h2>📮 提交线索</h2><p>发现新的免费模型、折扣或限时优惠？欢迎到 GitHub 仓库提 PR 修改 <code>data/offers.json</code>，或提 Issue。折扣类只收明显高性价比的（如低价大额度、限时大折扣）。</p><p class="mut">匿名提交表单筹备中（计划用 Cloudflare Worker + D1，人工审核后入库）。</p></section>
 <section class="box" id="comments"><h2>💬 评论区</h2><p class="mut">计划接入 Giscus（基于 GitHub Discussions），暂未开放。</p></section>
-<footer><div id="visits" class="visits">👀 统计加载中…</div>数据最后构建：__BUILT__ · 时间均为北京时间 · 本站不保证信息实时准确</footer></div>
+<footer><div id="visits" class="visits">👀 统计加载中…</div>数据最后构建：__BUILT__ · 时间均为北京时间 · 本站不保证信息实时准确<br>每日快讯也可看 <a href="https://saibodan.com/" target="_blank" rel="noopener">赛博鸡蛋资讯站 saibodan.com</a></footer></div>
 <script>
 const OFFERS=/*__DATA__*/[];
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));

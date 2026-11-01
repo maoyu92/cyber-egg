@@ -1,5 +1,103 @@
 [
   {
+    "id": "stepfun-stepaudio-3-free",
+    "name": "阶跃星辰 StepAudio 3 系列限免",
+    "provider": "阶跃星辰 StepFun 开放平台",
+    "category": "api",
+    "models": [
+      "stepaudio-3-realtime",
+      "stepaudio-3-tts",
+      "stepaudio-3-gen",
+      "stepaudio-3-music",
+      "stepaudio-3-asr-max"
+    ],
+    "free_type": "限时",
+    "start": null,
+    "end": "2026-11-08",
+    "quota": "StepAudio 3 系列调用限免期内按 0 元计费（至北京时间 2026-11-08 23:59:59）",
+    "summary": "实时语音 / TTS / 音频生成 / 音乐生成 / ASR 五款限免；11-09 00:00 起按新价计费",
+    "tags": [
+      "语音",
+      "音乐",
+      "TTS",
+      "ASR",
+      "限时"
+    ],
+    "how_to_get": [
+      "注册并登录 StepFun 开放平台",
+      "个人账户先完成实名认证（支付宝刷脸）",
+      "在控制台「接口密钥」创建 API Key",
+      "调用上述 StepAudio 3 模型 ID（Base URL：https://api.stepfun.com/v1）"
+    ],
+    "urls": {
+      "official": "https://platform.stepfun.com/",
+      "docs": "https://platform.stepfun.com/docs/zh/guides/pricing/details",
+      "pricing": "https://platform.stepfun.com/docs/zh/guides/pricing/details",
+      "signup": "https://platform.stepfun.com/"
+    },
+    "base_url": "https://api.stepfun.com/v1",
+    "compat": "OpenAI 兼容（chat/completions 等；语音能力另有专用音频接口 / Realtime WebSocket）",
+    "limits": "个人账户需实名；限速按累计现金充值分档（V0 不足 ¥100：并发 5 / RPM 100 / TPM 500,000；代金券不计入）。详见官方速率限制页。",
+    "usage_notes": "2026-11-02 官方定价页核实：限免至北京时间 2026-11-08 23:59:59，2026-11-09 00:00:00 起正式计费。定价页限免清单 Model ID 为 stepaudio-3-realtime / stepaudio-3-tts / stepaudio-3-gen / stepaudio-3-music / stepaudio-3-asr-max。Realtime 文档仍写限免期可用 stepaudio-3-realtime-preview、stepaudio-3-chat-preview，到期后 preview 下线；以控制台与定价页当日可用 ID 为准。11-09 起示例价：实时语音 0.65 元/会话分钟、TTS/音频生成 95 元/百万计费字符、音乐生成 16～32 元/输出音频小时、ASR-max 7.50 元/音频小时。",
+    "sources": [
+      "https://platform.stepfun.com/docs/zh/guides/pricing/details",
+      "https://platform.stepfun.com/docs/zh/guides/pricing/rate-limits",
+      "https://platform.stepfun.com/docs/zh/quickstart/real-name-verification",
+      "https://platform.stepfun.com/docs/zh/guides/models/stepaudio-3-realtime",
+      "https://platform.stepfun.com/docs/zh/quickstart/overview",
+      "https://saibodan.com/deals/stepfun-free-models"
+    ],
+    "verified_at": "2026-11-02",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": "StepAudio 3 系列正式发布日待核实；限免截止以官方定价页为准"
+  },
+  {
+    "id": "libtv-double11-wan-kling-h3",
+    "name": "LibTV 双十一 · Wan 3.0 / Kling 4.0 / Minimax H3 0 积分畅用",
+    "provider": "LibTV",
+    "category": "app",
+    "models": [
+      "Wan 3.0",
+      "Kling 4.0",
+      "Minimax H3"
+    ],
+    "free_type": "限时",
+    "start": "2026-10-29",
+    "end": "2026-11-11",
+    "quota": "活动期内指定模型 0 积分畅用（官网卡片标「0积分畅用」；1080P 以下可不消耗积分，以账号内权益为准）",
+    "summary": "双十一视频模型 0 积分畅用；官网 activityEndTime 为 2026-11-12 00:00（北京时间）",
+    "tags": [
+      "视频生成",
+      "双十一",
+      "客户端",
+      "限时"
+    ],
+    "how_to_get": [
+      "打开 LibTV 官网并登录",
+      "在创作区选择 Wan 3.0 / Kling 4.0 / Minimax H3",
+      "非会员若被引导开通年会员，按页面提示处理；会员档位对应的畅用天数以账号内说明为准"
+    ],
+    "urls": {
+      "official": "https://www.liblib.tv/",
+      "announcement": "https://www.liblib.tv/activity/72",
+      "signup": "https://www.liblib.tv/"
+    },
+    "base_url": null,
+    "compat": null,
+    "limits": "官网文案对非会员引导「开通年会员」后限时 0 积分无限用；权益设置写明优先使用【0积分畅用】时，Wan 3 / Kling 4.0 / H3 在 1080P 以下生成不消耗积分。具体资格、并发与排队以账号内提示为准。",
+    "usage_notes": "2026-11-02 官网首页静态资源配置核实：Wan 3.0 / Kling 4.0 / Minimax H3 的 activityStartTime=2026-10-29T07:45:00+08:00、activityEndTime=2026-11-12T00:00:00+08:00，故本条 end 记为 2026-11-11（免费到 11-11 当天结束）。首页双十一横幅另有分档倒计时节点（当日所见含 2026-11-02 / 11-05 / 11-11 23:59:59），与模型 0 积分截止不完全等同。activity/72 页另写双十一活动时间 2026.10.22–2026.11.15。Seedance 2.5 横幅写每秒低至 ¥0.16，是低价不是免费，未单独建条。",
+    "sources": [
+      "https://www.liblib.tv/",
+      "https://www.liblib.tv/activity/72",
+      "https://saibodan.com/episodes/deals-2026-11-01"
+    ],
+    "verified_at": "2026-11-02",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": "各模型上线日待核实；本条按 LibTV 双十一活动卡记录"
+  },
+  {
     "provider": "OpenCode Zen",
     "category": "relay",
     "free_type": "限时",
@@ -200,15 +298,15 @@
     "base_url": "见模型广场页（OpenAI / Anthropic 两种 base URL）",
     "compat": "OpenAI / Anthropic",
     "limits": "上下文 1M，最大输出 128K；RPM 20，TPM 5,000,000",
-    "usage_notes": "活动结束后原价：输入 1 / 缓存 0.2 / 输出 2 元每百万 tokens。官方有 Hermes、OpenClaw、pi 接入文档。",
+    "usage_notes": "活动结束后原价：输入 1 / 缓存 0.2 / 输出 2 元每百万 tokens。官方有 Hermes、OpenClaw、pi 接入文档。 2026-11-02：截止日已过，状态改为 ended。",
     "sources": [
       "https://maas.unisound.com/models/u2-flash",
       "https://maas.unisound.com/model-hub/u2-flash",
       "https://maas.unisound.com/docs/price/overview",
       "https://www.unisound.com/research/158"
     ],
-    "verified_at": "2026-10-18",
-    "status": "active",
+    "verified_at": "2026-11-02",
+    "status": "ended",
     "model_released": "2026-09-15",
     "model_released_note": "云知声官方发布"
   },
@@ -482,7 +580,7 @@
     "base_url": null,
     "compat": null,
     "limits": "待核实（高峰期可能有并发/排队限制）",
-    "usage_notes": "仅限 WorkBuddy 内使用，不是 API 额度。10-12 至 10-25 的活动期来自阶跃星辰公告（界面新闻、上证报/新浪转述）；10-21 复查仍未见延期消息，截止日维持 10-25。腾讯云开发者社区等二手文章写 25 日后恢复 0.43x 积分，但阶跃/腾讯可直接打开的官方网页仍未说明结束后计费，该倍率仅作参考。",
+    "usage_notes": "仅限 WorkBuddy 内使用，不是 API 额度。10-12 至 10-25 的活动期来自阶跃星辰公告（界面新闻、上证报/新浪转述）；10-21 复查仍未见延期消息，截止日维持 10-25。腾讯云开发者社区等二手文章写 25 日后恢复 0.43x 积分，但阶跃/腾讯可直接打开的官方网页仍未说明结束后计费，该倍率仅作参考。 2026-11-02：截止日已过，状态改为 ended。",
     "sources": [
       "https://m.jiemian.com/article/15179593.html",
       "https://finance.sina.com.cn/jjxw/2026-10-13/doc-inivasei8834603.shtml",
@@ -490,8 +588,8 @@
       "https://help.aliyun.com/zh/model-studio/newly-released-models",
       "https://www.allagent.wiki/blog/ai-freebies-20261013/"
     ],
-    "verified_at": "2026-10-21",
-    "status": "active",
+    "verified_at": "2026-11-02",
+    "status": "ended",
     "model_released": "2026-09-21",
     "model_released_note": "Step 5 Preview 在阿里云百炼的上架日期；阶跃官方发布日待核实"
   },
@@ -548,8 +646,8 @@
       "客户端",
       "多模态"
     ],
-    "status": "active",
-    "verified_at": "2026-10-24",
+    "status": "ended",
+    "verified_at": "2026-11-02",
     "model_released": "2026-09-10",
     "model_released_note": "DeepSeek 官方更新日志",
     "id": "workbuddy-intl-deepseek-v41-flash",
@@ -572,7 +670,7 @@
       "announcement": "https://x.com/WorkBuddy_AI/status/2109673559710974130"
     },
     "limits": "待核实（第三方称账户积分清零后免费模型也无法调用）",
-    "usage_notes": "10-12 官方延期至 10-31；10-17 官方宣布已更新到 V4.1-Flash-1017 且仍免费到 10-31。仅国际版 workbuddy.ai。国内版同模型据第三方是优惠倍率而非免费（待核实）。账户积分清零后免费模型也可能不可用（第三方，待核实）。 10-24：模真真 10-23 汇总仍列免费至 10-31（仅日期，未注明时区/小时）；官方 X 推文本次未能直接抓取复核。",
+    "usage_notes": "10-12 官方延期至 10-31；10-17 官方宣布已更新到 V4.1-Flash-1017 且仍免费到 10-31。仅国际版 workbuddy.ai。国内版同模型据第三方是优惠倍率而非免费（待核实）。账户积分清零后免费模型也可能不可用（第三方，待核实）。 10-24：模真真 10-23 汇总仍列免费至 10-31（仅日期，未注明时区/小时）；官方 X 推文本次未能直接抓取复核。 2026-11-02：截止日已过，状态改为 ended。",
     "sources": [
       "https://x.com/WorkBuddy_AI/status/2111404103402430558",
       "https://x.com/WorkBuddy_AI/status/2109673559710974130",
@@ -825,14 +923,14 @@
     "base_url": "https://api.deepseek.com",
     "compat": "随 Harness / Claude Code / Codex 工具协议",
     "limits": "直接 API：¥5/千次成功请求；空结果/失败/超时不计费（以官方指南为准）",
-    "usage_notes": "模型调用本身仍按 deepseek-flash 正常计费；本条只覆盖 Search/Fetch 工具费。截止时刻：北京时间 2026-11-01 00:00。",
+    "usage_notes": "模型调用本身仍按 deepseek-flash 正常计费；本条只覆盖 Search/Fetch 工具费。截止时刻：北京时间 2026-11-01 00:00。 2026-11-02：截止日已过，状态改为 ended。",
     "sources": [
       "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
       "https://api-docs.deepseek.com/quick_start/pricing/",
       "https://api-docs.deepseek.com/zh-cn/updates"
     ],
-    "verified_at": "2026-10-18",
-    "status": "active",
+    "verified_at": "2026-11-02",
+    "status": "ended",
     "model_released": "2026-10-17",
     "model_released_note": "Search/Fetch 与 V4.1-Flash-1017 同日开放"
   },
@@ -971,8 +1069,8 @@
     "sources": [
       "https://docs.qoder.com/zh/events/communityboost"
     ],
-    "verified_at": "2026-10-24",
-    "status": "active",
+    "verified_at": "2026-11-02",
+    "status": "ended",
     "model_released": null,
     "model_released_note": null,
     "id": "qoder-1024-sonus",
@@ -987,7 +1085,7 @@
       "审核通过或 Pro+ 用户：客户端 头像→权益中心 / IDE 用量面板 / CLI /claim 领取",
       "选 Sonus 模型使用"
     ],
-    "usage_notes": "10-24 官方规则页核实。"
+    "usage_notes": "10-24 官方规则页核实。 2026-11-02：截止日已过，状态改为 ended。"
   },
   {
     "models": [
@@ -1009,8 +1107,8 @@
       "https://x.com/qoder_ai_ide/status/2112211609448071675",
       "https://mozhenzhen.com/news?category=money"
     ],
-    "verified_at": "2026-10-24",
-    "status": "active",
+    "verified_at": "2026-11-02",
+    "status": "ended",
     "model_released": null,
     "model_released_note": null,
     "id": "qoder-deepseek-v41-flash-1017",
@@ -1023,7 +1121,7 @@
     "how_to_get": [
       "登录 Qoder，模型选择 DeepSeek-V4.1-Flash-1017"
     ],
-    "usage_notes": "待核实：官方 X 推文 10-24 未能直接抓取；截止时间来自模真真 10-23 汇总。"
+    "usage_notes": "待核实：官方 X 推文 10-24 未能直接抓取；截止时间来自模真真 10-23 汇总。 2026-11-02：截止日已过，状态改为 ended。"
   },
   {
     "models": [],
@@ -1228,8 +1326,8 @@
       "https://www.appinn.com/zcode-1024-free-500-million-tokens/",
       "https://www.aipromonow.com/promos/zcode-1024-5e8-tokens-glm-5-3-oct26-2026"
     ],
-    "verified_at": "2026-10-24",
-    "status": "active",
+    "verified_at": "2026-11-02",
+    "status": "ended",
     "model_released": null,
     "model_released_note": null,
     "id": "zcode-1024-500m-tokens",
@@ -1244,6 +1342,6 @@
       "左下角「ZCODE 1024 程序员节 · 5 亿 TOKENS」入口→打开大礼包",
       "模型设置选 GLM-5.3 / GLM-5.3-Flash"
     ],
-    "usage_notes": "待核实：官网首页未刊登活动规则（端内弹窗），细节来自 UIED 转载官方文案、小众软件实测、AI Promo Now；2亿/3亿拆分小众软件称截图未显示。"
+    "usage_notes": "待核实：官网首页未刊登活动规则（端内弹窗），细节来自 UIED 转载官方文案、小众软件实测、AI Promo Now；2亿/3亿拆分小众软件称截图未显示。 2026-11-02：截止日已过，状态改为 ended。"
   }
 ]
