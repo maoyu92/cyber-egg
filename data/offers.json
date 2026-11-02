@@ -1,5 +1,43 @@
 [
   {
+    "id": "trae-cn-invite-3000",
+    "name": "TRAE 新人邀请礼 3,000 积分",
+    "provider": "字节跳动 TRAE（trae.cn）",
+    "category": "app",
+    "models": [],
+    "free_type": "长期",
+    "start": null,
+    "end": null,
+    "quota": "通过邀请链接注册并登录桌面端：邀请奖励 500 积分 + 新人福利 2,500 积分，合计一次性 3,000 积分（新用户）",
+    "summary": "字节 AI 编程 IDE TRAE 国内版新人福利；「注册/获取」链接为站长的邀请链接",
+    "tags": [
+      "Coding",
+      "IDE",
+      "新人",
+      "邀请"
+    ],
+    "how_to_get": [
+      "打开站长的邀请链接（下方「注册/获取」）",
+      "注册 TRAE 账号",
+      "下载并登录 TRAE 桌面端，积分自动到账"
+    ],
+    "urls": {
+      "official": "https://www.trae.cn/",
+      "signup": "https://www.trae.cn/events/code-fission/DT3X52AV7GHM?utm_source=copy_link&utm_medium=code_fission"
+    },
+    "base_url": null,
+    "compat": null,
+    "limits": "仅限新用户，一次性发放；积分用途与有效期以 TRAE 账户内说明为准",
+    "usage_notes": "2026-11-02 活动页核实：「注册并登录桌面端，即可领取 500 积分，新人福利再送 2500 积分」，页面未写截止日期。注册链接为站长的邀请链接。",
+    "sources": [
+      "https://www.trae.cn/events/code-fission/DT3X52AV7GHM?utm_source=copy_link&utm_medium=code_fission"
+    ],
+    "verified_at": "2026-11-02",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": null
+  },
+  {
     "id": "stepfun-stepaudio-3-free",
     "name": "阶跃星辰 StepAudio 3 系列限免",
     "provider": "阶跃星辰 StepFun 开放平台",
