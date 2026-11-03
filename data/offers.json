@@ -1381,5 +1381,46 @@
       "模型设置选 GLM-5.3 / GLM-5.3-Flash"
     ],
     "usage_notes": "待核实：官网首页未刊登活动规则（端内弹窗），细节来自 UIED 转载官方文案、小众软件实测、AI Promo Now；2亿/3亿拆分小众软件称截图未显示。 2026-11-02：截止日已过，状态改为 ended。"
+  },
+  {
+    "models": [
+      "qiniu/conatus-free"
+    ],
+    "start": "2026-10-24",
+    "end": "2026-11-30",
+    "base_url": "https://api.qnaigc.com/v1",
+    "compat": "OpenAI Completions（/v1/chat/completions）+ Anthropic Messages（BaseURL https://api.qnaigc.com/）",
+    "tags": [
+      "API",
+      "融合模型",
+      "1M 上下文"
+    ],
+    "limits": "未登录/未实名认证不可调用（0 Token）；仅消耗活动每日免费额度，用尽直接报错，不扣余额/资源包/订阅额度/积分，不支持付费续用；按输入+输出 Token 计量，缓存输入也计入；同账号所有 API Key 共享；每日 00:00（北京时间）重置不结转；活动结束即停止调用",
+    "urls": {
+      "official": "https://www.qiniu.com/ai/free-models/conatus-2026",
+      "signup": "https://www.qiniu.com/ai/free-models/conatus-2026",
+      "model": "https://www.qiniu.com/ai/model/qiniu/conatus-free"
+    },
+    "sources": [
+      "https://www.qiniu.com/ai/free-models/conatus-2026",
+      "https://www.qiniu.com/ai/model/qiniu/conatus-free"
+    ],
+    "verified_at": "2026-11-03",
+    "status": "active",
+    "model_released": "2026-10-24",
+    "model_released_note": "七牛云模型页标注发布于 2026.10.24",
+    "id": "qiniu-conatus-free-1024",
+    "name": "七牛云 Conatus Free 免费模型活动（1024 程序员节）",
+    "provider": "七牛云",
+    "category": "api",
+    "free_type": "限时",
+    "quota": "实名认证后每日 1 亿 Token；任意一笔 >100 元且已到账充值（多笔不累计）后每日 10 亿 Token",
+    "summary": "聚合多个顶级模型的匿名融合模型，统一 API 调用；支持工具调用、深度思考、图像理解、结构化输出；1M 上下文、128K 最大输出；10-24 00:00 至 11-30 23:59（北京时间）",
+    "how_to_get": [
+      "登录七牛云账号并在控制台完成实名认证",
+      "控制台模型页创建 API Key（同账号 Key 共享额度）",
+      "用模型 ID qiniu/conatus-free 调用，BaseURL https://api.qnaigc.com/v1"
+    ],
+    "usage_notes": "购买资源包或订阅不计入充值提额门槛；额度以控制台为准。2026-11-03 核对官方活动页。"
   }
 ]

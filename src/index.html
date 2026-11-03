@@ -38,7 +38,7 @@ section.box{background:var(--card);border:1px solid var(--line);border-radius:14
 <section class="box" id="comments"><h2>💬 评论区</h2><p class="mut">计划接入 Giscus（基于 GitHub Discussions），暂未开放。</p></section>
 <footer><div id="visits" class="visits">👀 统计加载中…</div>数据最后构建：__BUILT__ · 时间均为北京时间 · 本站不保证信息实时准确<br>每日快讯也可看 <a href="https://saibodan.com/" target="_blank" rel="noopener">赛博鸡蛋资讯站 saibodan.com</a></footer></div>
 <script>
-const OFFERS=/*__DATA__*/[];
+const OFFERS=(/*__DATA__*/[]).filter(o=>o.status!=='ended'&&!(o.end&&new Date(o.end+'T23:59:59+08:00')<Date.now()));
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const link=u=>/^https?:/.test(u)?`<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u)}</a>`:esc(u);
 function days(o){if(!o.end)return null;return Math.floor((new Date(o.end+'T23:59:59+08:00')-Date.now())/864e5)}
