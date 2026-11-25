@@ -1343,5 +1343,47 @@
       "模型设置选 GLM-5.3 / GLM-5.3-Flash"
     ],
     "usage_notes": "待核实：官网首页未刊登活动规则（端内弹窗），细节来自 UIED 转载官方文案、小众软件实测、AI Promo Now；2亿/3亿拆分小众软件称截图未显示。 2026-11-02：截止日已过，状态改为 ended。"
+  },
+  {
+    "id": "beiluo-api-daily-checkin",
+    "name": "北洛API 每日签到额度",
+    "provider": "北洛API",
+    "category": "relay",
+    "models": [
+      "claude-opus-4-8",
+      "gpt-6.2-sol",
+      "deepseek-v4-pro"
+    ],
+    "free_type": "每日额度",
+    "start": null,
+    "end": null,
+    "quota": "每日签到 $0.01–$0.10 站内额度；连续 7 天可额外领取 $0.20–$0.30。",
+    "summary": "第三方 API 中转站，文本按所选模型与分组计价，签到所得可用于 API 调用。",
+    "tags": [
+      "每日签到",
+      "多模型"
+    ],
+    "how_to_get": [
+      "注册账号并验证邮箱",
+      "登录后打开每日签到页领取站内额度"
+    ],
+    "urls": {
+      "official": "https://beiluoxi.xyz/",
+      "docs": "https://beiluoxi.xyz/help/_full.html",
+      "signup": "https://beiluoxi.xyz/register"
+    },
+    "base_url": "https://beiluoxi.xyz/v1",
+    "compat": "OpenAI / Anthropic / Gemini",
+    "limits": "需要登录，每日签到一次。",
+    "usage_notes": "本条为站方提交。常规调用按量计费，各模型单价见公开价目。",
+    "sources": [
+      "https://beiluoxi.xyz/daily-checkin",
+      "https://beiluoxi.xyz/help/_full.html",
+      "https://beiluoxi.xyz/api/provider/pricing"
+    ],
+    "verified_at": "2026-11-25",
+    "status": "active",
+    "model_released": null,
+    "model_released_note": "跨模型站内额度。"
   }
 ]
